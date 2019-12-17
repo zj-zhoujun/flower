@@ -87,8 +87,8 @@ class Advert extends Admin
             $result = $this->validate($data, 'Advert');
             if (true !== $result) $this->error($result);
             if ($data['ad_type'] != 0) {
-                $data['link'] == '' && $this->error('链接不能为空');
-                Validate::is($data['link'], 'url') === false && $this->error('链接不是有效的url地址'); // true
+//                $data['link'] == '' && $this->error('链接不能为空');
+//                Validate::is($data['link'], 'url') === false && $this->error('链接不是有效的url地址'); // true
             }
 
             // 广告类型
@@ -159,13 +159,13 @@ class Advert extends Admin
                 ['select', 'typeid', '广告分类', '', $list_type, 0],
                 ['text', 'tagname', '广告位标识', '由小写字母、数字或下划线组成，不能以数字开头'],
                 ['text', 'name', '广告位名称'],
-                ['radio', 'timeset', '时间限制', '', ['永不过期', '在设内时间内有效'], 0],
-                ['daterange', 'start_time,end_time', '开始时间-结束时间'],
+               //['radio', 'timeset', '时间限制', '', ['永不过期', '在设内时间内有效'], 0],
+                //['daterange', 'start_time,end_time', '开始时间-结束时间'],
                 ['radio', 'ad_type', '广告类型', '', ['代码', '文字', '图片', 'flash'], 0],
-                ['textarea', 'code', '代码', '<code>必填</code>，支持html代码'],
-                ['image', 'src', '图片', '<code>必须</code>'],
-                ['text', 'title', '文字内容', '<code>必填</code>'],
-                ['text', 'link', '链接', '<code>必填</code>'],
+                ['textarea', 'code', '代码'],
+                ['images', 'src', '图片'],
+                ['text', 'title', '文字内容'],
+                ['text', 'link', '链接'],
                 ['colorpicker', 'color', '文字颜色', '', '', 'rgb'],
                 ['text', 'size', '文字大小', '只需填写数字，例如:12，表示12px', '',  ['', 'px']],
                 ['text', 'width', '宽度', '不用填写单位，只需填写具体数字'],
@@ -227,8 +227,9 @@ class Advert extends Admin
                 ['static', 'ad_type', '广告类型'],
                 ['text', 'name', '广告位名称'],
                 ['select', 'typeid', '广告分类', '', $list_type],
-                ['radio', 'timeset', '时间限制', '', ['永不过期', '在设内时间内有效']],
-                ['daterange', 'start_time,end_time', '开始时间-结束时间'],
+                ['images', 'src', '图片'],
+                //['radio', 'timeset', '时间限制', '', ['永不过期', '在设内时间内有效']],
+                //['daterange', 'start_time,end_time', '开始时间-结束时间'],
                 ['textarea', 'content', '广告内容'],
                 ['radio', 'status', '立即启用', '', ['否', '是']]
             ])

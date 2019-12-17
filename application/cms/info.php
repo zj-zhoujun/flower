@@ -54,7 +54,7 @@ return [
     // 原始数据库表前缀
     // 用于在导入模块sql时，将原有的表前缀转换成系统的表前缀
     // 一般模块自带sql文件时才需要配置
-    'database_prefix' => 'dp_',
+    'database_prefix' => 'flower_',
 
     // 模块参数配置
     'config' => [
