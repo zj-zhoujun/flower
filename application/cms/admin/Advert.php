@@ -53,9 +53,8 @@ class Advert extends Admin
             ->addColumns([ // 批量添加数据列
                 ['id', 'ID'],
                 ['name', '广告名称', 'text.edit'],
+                ['image', '图片', 'picture'],
                 ['typeid', '分类', 'select', $list_type],
-                ['ad_type', '类型', 'text', '', ['代码', '文字', '图片', 'flash']],
-                ['timeset', '时间限制', 'text', '', ['永不过期', '限时']],
                 ['create_time', '创建时间', 'datetime'],
                 ['update_time', '更新时间', 'datetime'],
                 ['status', '状态', 'switch'],
@@ -157,28 +156,13 @@ class Advert extends Admin
             ->setPageTips('如果出现无法添加的情况，可能由于浏览器将本页面当成了广告，请尝试关闭浏览器的广告过滤功能再试。', 'warning')
             ->addFormItems([
                 ['select', 'typeid', '广告分类', '', $list_type, 0],
-                ['text', 'tagname', '广告位标识', '由小写字母、数字或下划线组成，不能以数字开头'],
                 ['text', 'name', '广告位名称'],
-               //['radio', 'timeset', '时间限制', '', ['永不过期', '在设内时间内有效'], 0],
-                //['daterange', 'start_time,end_time', '开始时间-结束时间'],
-                ['radio', 'ad_type', '广告类型', '', ['代码', '文字', '图片', 'flash'], 0],
-                ['textarea', 'code', '代码'],
-                ['images', 'src', '图片'],
+                ['image', 'image', '图片'],
                 ['text', 'title', '文字内容'],
                 ['text', 'link', '链接'],
-                ['colorpicker', 'color', '文字颜色', '', '', 'rgb'],
                 ['text', 'size', '文字大小', '只需填写数字，例如:12，表示12px', '',  ['', 'px']],
-                ['text', 'width', '宽度', '不用填写单位，只需填写具体数字'],
-                ['text', 'height', '高度', '不用填写单位，只需填写具体数字'],
-                ['text', 'alt', '图片描述', '即图片alt的值'],
                 ['radio', 'status', '立即启用', '', ['否', '是'], 1]
             ])
-            ->setTrigger('ad_type', '0', 'code')
-            ->setTrigger('ad_type', '1', 'title,color,size')
-            ->setTrigger('ad_type', '2', 'src,alt')
-            ->setTrigger('ad_type', '2,3', 'width,height')
-            ->setTrigger('ad_type', '1,2,3', 'link')
-            ->setTrigger('timeset', '1', 'start_time')
             ->fetch();
     }
 
@@ -222,18 +206,14 @@ class Advert extends Admin
             ->setPageTips('如果出现无法添加的情况，可能由于浏览器将本页面当成了广告，请尝试关闭浏览器的广告过滤功能再试。', 'warning')
             ->addFormItems([
                 ['hidden', 'id'],
-                ['hidden', 'tagname'],
-                ['static', 'tagname', '广告位标识'],
-                ['static', 'ad_type', '广告类型'],
                 ['text', 'name', '广告位名称'],
                 ['select', 'typeid', '广告分类', '', $list_type],
-                ['images', 'src', '图片'],
+                ['image', 'image', '图片'],
                 //['radio', 'timeset', '时间限制', '', ['永不过期', '在设内时间内有效']],
                 //['daterange', 'start_time,end_time', '开始时间-结束时间'],
                 ['textarea', 'content', '广告内容'],
                 ['radio', 'status', '立即启用', '', ['否', '是']]
             ])
-            ->setTrigger('timeset', '1', 'start_time')
             ->setFormData($info)
             ->fetch();
     }

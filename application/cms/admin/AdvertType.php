@@ -12,6 +12,7 @@ namespace app\cms\admin;
 use app\admin\controller\Admin;
 use app\common\builder\ZBuilder;
 use app\cms\model\AdvertType as AdvertTypeModel;
+use think\Db;
 
 /**
  * 广告分类控制器
@@ -41,6 +42,7 @@ class AdvertType extends Admin
             ->addColumns([ // 批量添加数据列
                 ['id', 'ID'],
                 ['name', '分类名称', 'text.edit'],
+                ['flag', '分类标识'],
                 ['create_time', '创建时间', 'datetime'],
                 ['update_time', '更新时间', 'datetime'],
                 ['status', '状态', 'switch'],
@@ -73,6 +75,9 @@ class AdvertType extends Admin
             $result = $this->validate($data, 'AdvertType');
             if(true !== $result) $this->error($result);
 
+            if(Db::name('cms_advert_type')->where('flag',$data['flag'])->find()){
+                $this->error('广告标识已存在');
+            }
             if ($type = AdvertTypeModel::create($data)) {
                 // 记录行为
                 action_log('advert_type_add', 'cms_advert_type', $type['id'], UID, $data['name']);
@@ -87,6 +92,7 @@ class AdvertType extends Admin
             ->setPageTips('如果出现无法添加的情况，可能由于浏览器将本页面当成了广告，请尝试关闭浏览器的广告过滤功能再试。', 'warning')
             ->addFormItems([
                 ['text', 'name', '分类名称'],
+                ['text', 'flag', '分类标识'],
                 ['radio', 'status', '立即启用', '', ['否', '是'], 1]
             ])
             ->fetch();
