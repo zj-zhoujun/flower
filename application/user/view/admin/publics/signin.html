@@ -73,7 +73,7 @@
                                         <input class="form-control" type="password" id="login-password" name="password" placeholder="请输入您的密码">
                                     </div>
                                 </div>
-                                {notempty name="Think.config.captcha_signin"}
+                                <notempty name="Think.config.captcha_signin">
                                 <div class="form-group">
                                     <label class="col-xs-12" for="login-password">验证码</label>
                                     <div class="col-xs-7">
@@ -83,7 +83,7 @@
                                         <img src="{:captcha_src()}" class="pull-right" id="captcha" style="cursor: pointer;" onclick="this.src='{:captcha_src()}?d='+Math.random();" title="点击刷新" alt="captcha" />
                                     </div>
                                 </div>
-                                {/notempty}
+                                </notempty>
                                 {// 登录框钩子}
                                 {:hook('signin_captcha')}
                                 <div class="form-group">

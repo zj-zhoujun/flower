@@ -1,9 +1,9 @@
-{extend name="public:layout" /}
+<extend name="public:layout" />
 
-{block name="main-container"}
+<block name="main-container">
 <!-- Main Container -->
 <main id="main-container">
-    {empty name="slider"}
+    <empty name="slider">
     <div class="bg-image" style="background-image: url('__MODULE_IMG__/photo12@2x.jpg');">
         <div class="bg-primary-dark-op">
             <section class="content content-full content-boxed overflow-hidden">
@@ -26,20 +26,20 @@
             </section>
         </div>
     </div>
-    {/empty}
-    {notempty name="slider"}
+    </empty>
+    <notempty name="slider">
     <div class="slider">
         <!-- Slider with dots and hover arrows -->
         <div class="js-slider slick-nav-white slick-nav-hover" data-slider-dots="true" data-slider-arrows="true" data-slider-autoplay="true" data-slider-autoplay-speed="3000">
-            {volist name="slider" id="item"}
+            <volist name="slider" id="item">
             <div>
                 <a href="{$item.url|default='javascript:void(0);'}" target="_blank"><img class="img-responsive" src="{:get_file_path($item['cover'])}" alt="{$item.title}"></a>
             </div>
-            {/volist}
+            </volist>
         </div>
         <!-- END Slider with dots and hover arrows -->
     </div>
-    {/notempty}
+    </notempty>
 
     <!-- Classic Features #1 -->
     <div class="bg-white">
@@ -197,4 +197,4 @@
     <!-- END Classic Features #2 -->
 </main>
 <!-- END Main Container -->
-{/block}
+</block>

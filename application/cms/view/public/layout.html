@@ -4,19 +4,19 @@
 <head>
     <meta charset="utf-8">
 
-    <title>{block name="title"}{:config('web_site_title')}{/block}</title>
+    <title><block name="title">{:config('web_site_title')}</block></title>
 
     <meta name="description" content="{:config('web_site_description')}">
     <meta name="keywords" content="{:config('web_site_keywords')}">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
-    {block name="meta"}{/block}
+    <block name="meta"></block>
 
-    {block name="link"}
+    <block name="link">
     <!-- Icons -->
     <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
     <link rel="shortcut icon" href="__ADMIN_IMG__/favicons/favicon.ico">
     <!-- END Icons -->
-    {/block}
+    </block>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="__LIBS__/slick/slick.min.css">
@@ -28,13 +28,13 @@
     <link rel="stylesheet" href="__MODULE_CSS__/main.css">
     <!-- END Stylesheets -->
 
-    {block name="style"}{/block}
+    <block name="style"></block>
 </head>
 <body id="{$Request.module|strtolower}-{$Request.controller|strtolower}-{$Request.action|strtolower}" class="{$Request.module|strtolower}-{$Request.controller|strtolower}-{$Request.action|strtolower}">
-{block name="page-container"}
+<block name="page-container">
 <!-- Page Container -->
 <div id="page-container" class="header-navbar-fixed header-navbar-transparent">
-    {block name="header"}
+    <block name="header">
     <!-- Header -->
     <header id="header-navbar" class="content-mini content-mini-full">
         <div class="content-boxed">
@@ -55,20 +55,20 @@
                         <i class="fa fa-times"></i>
                     </button>
                 </li>
-                {volist name="main_nav" id="menu"}
+                <volist name="main_nav" id="menu">
                 <li class="{$menu.css|default=''}">
-                    <a href="{$menu.url}" rel="{$menu.rel|default=''}" target="{$menu.target}">{$menu.title} {notempty name="menu.child"} <i class="fa fa-fw fa-angle-down"></i>{/notempty}</a>
-                    {notempty name="menu.child"}
+                    <a href="{$menu.url}" rel="{$menu.rel|default=''}" target="{$menu.target}">{$menu.title} <notempty name="menu.child"> <i class="fa fa-fw fa-angle-down"></i></notempty></a>
+                    <notempty name="menu.child">
                     <ul>
-                        {volist name="menu.child" id="sub_menu"}
+                        <volist name="menu.child" id="sub_menu">
                         <li class="{$sub_menu.css|default=''}">
                             <a href="{$sub_menu.url}" rel="{$sub_menu.rel|default=''}" target="{$sub_menu.target}">{$sub_menu.title}</a>
                         </li>
-                        {/volist}
+                        </volist>
                     </ul>
-                    {/notempty}
+                    </notempty>
                 </li>
-                {/volist}
+                </volist>
             </ul>
             <!-- END Main Header Navigation -->
 
@@ -84,11 +84,11 @@
         </div>
     </header>
     <!-- END Header -->
-    {/block}
+    </block>
 
-    {block name="main-container"}{/block}
+    <block name="main-container"></block>
 
-    {block name="page-footer"}
+    <block name="page-footer">
     <!-- Footer -->
     <footer id="page-footer" class="bg-white">
         <div class="content content-boxed">
@@ -97,21 +97,21 @@
                 <div class="col-sm-4">
                     <h3 class="h5 font-w600 text-uppercase push-20">公司</h3>
                     <ul class="list list-simple-mini font-s13">
-                        {volist name="about_nav" id="menu"}
+                        <volist name="about_nav" id="menu">
                         <li class="{$menu.css|default=''}">
                             <a class="font-w600" rel="{$menu.rel|default=''}" href="{$menu.url}" target="{$menu.target}">{$menu.title}</a>
                         </li>
-                        {/volist}
+                        </volist>
                     </ul>
                 </div>
                 <div class="col-sm-4">
                     <h3 class="h5 font-w600 text-uppercase push-20">服务与支持</h3>
                     <ul class="list list-simple-mini font-s13">
-                        {volist name="support_nav" id="menu"}
+                        <volist name="support_nav" id="menu">
                         <li class="{$menu.css|default=''}">
                             <a class="font-w600" rel="{$menu.rel|default=''}" href="{$menu.url}" target="{$menu.target}">{$menu.title}</a>
                         </li>
-                        {/volist}
+                        </volist>
                     </ul>
                 </div>
                 <div class="col-sm-4">
@@ -135,67 +135,67 @@
         </div>
     </footer>
     <!-- END Footer -->
-    {/block}
+    </block>
 </div>
 <!-- END Page Container -->
-{/block}
+</block>
 
 <div class="hidden">
     {// 站点统计代码}
     {:config('web_site_statistics')}
-    {block name="hidden"}{/block}
+    <block name="hidden"></block>
 </div>
 
-{eq name="Think.config.cms_config.support_status" value="1"}
+<eq name="Think.config.cms_config.support_status" value="1">
 <div id="support" class="support">
     <div class="support-tag" style="background-color: {$Think.config.cms_config.support_color}"><i class="fa fa-fw fa-commenting"></i>在线客服</div>
     <div class="support-content" style="background-color: {$Think.config.cms_config.support_color}">
         <div class="support-content-inner">
-            {volist name="support" id="item"}
+            <volist name="support" id="item">
             <div class="support-item">
                 <strong>{$item.name}</strong>
                 <p>
-                    {notempty name="item.qq"}
+                    <notempty name="item.qq">
                     <a href="http://wpa.qq.com/msgrd?v=3&uin={$item.qq}&site=qq&menu=yes">
                         <img src="http://wpa.qq.com/pa?p=2:348468810:4" alt="{$item.name}">
                     </a>
-                    {/notempty}
-                    {notempty name="item.taobao"}
+                    </notempty>
+                    <notempty name="item.taobao">
                     <a href="http://www.taobao.com/webww/ww.php?ver=3&touid={$item.taobao}&siteid=cntaobao&status=2&charset=utf-8">
                         <img border="0" src="http://amos.alicdn.com/online.aw?v=2&uid={$item.taobao}&site=cntaobao&s=2&charset=utf-8" alt="{$item.name}">
                     </a>
-                    {/notempty}
-                    {notempty name="item.skype"}
+                    </notempty>
+                    <notempty name="item.skype">
                     <a href="callto://{$item.skype}">
                         <img border="0" src="http://metinfo.io/public/images/skype/skype_11.gif" alt="{$item.name}">
                     </a>
-                    {/notempty}
-                    {notempty name="item.alibaba"}
+                    </notempty>
+                    <notempty name="item.alibaba">
                     <a href="http://amos.alicdn.com/msg.aw?v=2&uid={$item.alibaba}&site=cnalichn&s=10&charset=UTF-8">
                         <img border="0" src="http://amos.alicdn.com/online.aw?v=2&uid={$item.alibaba}&site=cnalichn&s=10&charset=UTF-8" alt="{$item.name}">
                     </a>
-                    {/notempty}
-                    {notempty name="item.msn"}
+                    </notempty>
+                    <notempty name="item.msn">
                     <a href="msnim:chat?contact={$item.msn}"><img border="0" src="http://metinfo.io/public/images/msn/msn_1.gif" alt="{$item.name}"></a>
-                    {/notempty}
+                    </notempty>
                 </p>
             </div>
-            {/volist}
-            {notempty name="Think.config.cms_config.support_extra"}
+            </volist>
+            <notempty name="Think.config.cms_config.support_extra">
             <div class="support-extra">
                 {$Think.config.cms_config.support_extra}
             </div>
-            {/notempty}
-            {notempty name="Think.config.cms_config.support_wx"}
+            </notempty>
+            <notempty name="Think.config.cms_config.support_wx">
             <div class="support-wx">
                 <img src="{$Think.config.cms_config.support_wx|get_file_path}" alt="">
                 <div class="text-center">扫描微信二维码</div>
             </div>
-            {/notempty}
+            </notempty>
         </div>
     </div>
 </div>
-{/eq}
+</eq>
 
 <!-- OneUI Core JS: jQuery, Bootstrap, slimScroll, scrollLock, Appear, CountTo, Placeholder, Cookie and App.js -->
 <script src="__ADMIN_JS__/core/jquery.min.js"></script>
@@ -223,6 +223,6 @@
         })
     });
 </script>
-{block name="script"}{/block}
+<block name="script"></block>
 </body>
 </html>
