@@ -13,7 +13,20 @@ use think\facade\Env;
 use app\user\model\User;
 
 // 应用公共文件
-
+/**
+ * 业务逻辑层调用函数
+ * @param
+ * string $name 业务模型名称
+ * @return object
+ */
+function logic($name){
+    try {
+        $obj = ['name'=>$name, 'layer'=>'logic'];
+        return \util\Factory::createModel($obj);
+    } catch (\Exception $e) {
+        throw $e;
+    }
+}
 // 加载自定义公共文件
 if (is_file(Env::get('app_path') . 'function.php')) {
     include_once Env::get('app_path') . 'function.php';

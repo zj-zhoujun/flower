@@ -44,7 +44,7 @@ class Advert extends Admin
             'href'  => url('advert_type/index')
         ];
 
-        $list_type = AdvertTypeModel::where('status', 1)->column('id,name');
+        $list_type = AdvertTypeModel::where('status', 1)->column('flag,name');
         array_unshift($list_type, '默认分类');
 
         // 使用ZBuilder快速创建数据表格
@@ -85,60 +85,6 @@ class Advert extends Admin
             // 验证
             $result = $this->validate($data, 'Advert');
             if (true !== $result) $this->error($result);
-            if ($data['ad_type'] != 0) {
-//                $data['link'] == '' && $this->error('链接不能为空');
-//                Validate::is($data['link'], 'url') === false && $this->error('链接不是有效的url地址'); // true
-            }
-
-            // 广告类型
-            switch ($data['ad_type']) {
-                case 0: // 代码
-                    $data['content'] = $data['code'];
-                    break;
-                case 1: // 文字
-                    $data['content'] = '<a href="'.$data['link'].'" target="_blank" style="';
-                    if ($data['size'] != '') {
-                        $data['content'] .= 'font-size:'.$data['size'].'px;';
-                    }
-                    if ($data['color'] != '') {
-                        $data['content'] .= 'color:'.$data['color'];
-                    }
-                    $data['content'] .= '">'.$data['title'].'</a>';
-                    break;
-                case 2: // 图片
-                    $data['content'] = '<a href="'.$data['link'].'" target="_blank"><img src="'.get_file_path($data['src']).'" style="';
-                    if ($data['width'] != '') {
-                        $data['content'] .= 'width:'.$data['width'].'px;';
-                    }
-                    if ($data['height'] != '') {
-                        $data['content'] .= 'height:'.$data['height'].'px;';
-                    }
-                    if ($data['alt'] != '') {
-                        $data['content'] .= '" alt="'.$data['alt'];
-                    }
-                    $data['content'] .= '" /></a>';
-                    break;
-                case 3: // flash
-                    $data['content'] = '';
-                    $data['content'] = '<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"';
-                    if ($data['width'] != '') {
-                        $data['content'] .= ' width="'.$data['width'].'"';
-                    }
-                    if ($data['height'] != '') {
-                        $data['content'] .= ' height="'.$data['height'].'"';
-                    }
-                    $data['content'] .= '><param name="quality" value="high" /><param name="movie" value="'.$data['link'].'" /><embed allowfullscreen="true"';
-                    if ($data['height'] != '') {
-                        $data['content'] .= ' height="'.$data['height'].'"';
-                    }
-                    $data['content'] .= ' pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high" src="'.$data['link'].'" type="application/x-shockwave-flash"';
-                    if ($data['width'] != '') {
-                        $data['content'] .= ' width="'.$data['width'].'"';
-                    }
-                    $data['content'] .= '></embed></object>';
-                    break;
-            }
-
             if ($advert = AdvertModel::create($data)) {
                 // 记录行为
                 action_log('advert_add', 'cms_advert', $advert['id'], UID, $data['name']);
@@ -148,7 +94,7 @@ class Advert extends Admin
             }
         }
 
-        $list_type = AdvertTypeModel::where('status', 1)->column('id,name');
+        $list_type = AdvertTypeModel::where('status', 1)->column('flag,name');
         array_unshift($list_type, '默认分类');
 
         // 显示添加页面
@@ -158,9 +104,8 @@ class Advert extends Admin
                 ['select', 'typeid', '广告分类', '', $list_type, 0],
                 ['text', 'name', '广告位名称'],
                 ['image', 'image', '图片'],
-                ['text', 'title', '文字内容'],
+                ['textarea', 'content', '广告内容'],
                 ['text', 'link', '链接'],
-                ['text', 'size', '文字大小', '只需填写数字，例如:12，表示12px', '',  ['', 'px']],
                 ['radio', 'status', '立即启用', '', ['否', '是'], 1]
             ])
             ->fetch();
@@ -195,7 +140,7 @@ class Advert extends Admin
             }
         }
 
-        $list_type = AdvertTypeModel::where('status', 1)->column('id,name');
+        $list_type = AdvertTypeModel::where('status', 1)->column('flag,name');
         array_unshift($list_type, '默认分类');
 
         $info = AdvertModel::get($id);
