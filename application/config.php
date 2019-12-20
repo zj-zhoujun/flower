@@ -31,9 +31,9 @@ return [
         // 模板引擎普通标签结束标记
         'tpl_end'      => '}',
         // 标签库标签开始标记
-        'taglib_begin' => '<',   //后台兼容2.0
+        'taglib_begin' => '{',   //后台兼容2.0
         // 标签库标签结束标记
-        'taglib_end'   => '>',   //后台兼容2.0
+        'taglib_end'   => '}',   //后台兼容2.0
         // 视图根目录
         'view_base'    => APP_PATH.'tpl'.DS,
         //模版缓存
@@ -99,5 +99,11 @@ return [
         'path'  => LOG_PATH,
         // 日志记录级别
         'level' => ['error'],
+    ],
+    //分页配置
+    'paginate'               => [
+        'type'      => 'page\Page',
+        'var_page'  => 'page',
+        'list_rows' => 15,
     ],
 ];

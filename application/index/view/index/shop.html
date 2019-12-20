@@ -1,0 +1,162 @@
+﻿{extend name="index/index" /}
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="meta description">
+    <title></title>
+
+    <!--=== Favicon ===-->
+    <link rel="shortcut icon" href="__STATIC__/assets/img/favicon.ico" type="image/x-icon" />
+
+    <!-- Google fonts include -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,900%7CYesteryear" rel="stylesheet">
+
+    <!-- All Vendor & plugins CSS include -->
+    <link href="__STATIC__/assets/css/vendor.css" rel="stylesheet">
+    <!-- Main Style CSS -->
+    <link href="__STATIC__/assets/css/style.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+<script src="/oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="/oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+    <!-- main wrapper start -->
+    {block name="main"}
+    <main>
+        <!-- breadcrumb area start -->
+        <div class="breadcrumb-area common-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="breadcrumb-wrap">
+                            <nav aria-label="breadcrumb">
+                                <h1>产品展示</h1>
+                                <ul class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="{:url('index/index')}"><i class="fa fa-home"></i></a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">产品展示</li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- breadcrumb area end -->
+
+        <!-- page main wrapper start -->
+        <div class="shop-main-wrapper section-space pb-0">
+            <div class="container">
+                <div class="row">
+                    <!-- shop main wrapper start -->
+                    <div class="col-lg-9 order-1 order-lg-2">
+                        <div class="shop-product-wrapper">
+                            <!-- shop product top wrap start -->
+                            <div class="shop-top-bar">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-7 col-md-6 order-2 order-md-1">
+                                        <div class="top-bar-left">
+                                            <div class="product-view-mode">
+                                                <a class="active" href="#" data-target="grid-view" data-toggle="tooltip" title="Grid View"><i class="fa fa-th"></i></a>
+                                                <!--<a href="#" data-target="list-view" data-toggle="tooltip" title="List View"><i class="fa fa-list"></i></a>-->
+                                            </div>
+                                            <!--<div class="product-amount">-->
+                                                <!--<p>Showing 1–5 of 8 results</p>-->
+                                            <!--</div>-->
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-6 order-1 order-md-2">
+                                        <div class="top-bar-right">
+                                            <div class="product-short">
+                                                <p>Sort By : </p>
+                                                <select class="nice-select" name="sortby">
+                                                    <option value="trending">Relevance</option>
+                                                    <option value="sales">Name (A - Z)</option>
+                                                    <option value="sales">Name (Z - A)</option>
+                                                    <option value="rating">Price (Low &gt; High)</option>
+                                                    <option value="date">Rating (Lowest)</option>
+                                                    <option value="price-asc">Model (A - Z)</option>
+                                                    <option value="price-asc">Model (Z - A)</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- shop product top wrap start -->
+
+                            <!-- product item list wrapper start -->
+                            <div class="shop-product-wrap grid-view row mbn-40">
+                                <!-- product single item start -->
+                                {foreach name="product_list" item="list"}
+                                <div class="col-md-4 col-sm-6">
+                                    <!-- product grid start -->
+                                    {php}
+                                    $image_list = explode(',',$list['image']);
+                                    $image_list[1] = $image_list[1]??$image_list[0];
+                                    {/php}
+                                    <div class="product-item">
+                                        <figure class="product-thumb">
+                                            <a href="{:url('index/detail',['id'=>$list.id])}">
+                                                <img class="pri-img" src="{$image_list[0]|get_thumb}" alt="product">
+                                                <img class="sec-img" src="{$image_list[1]|get_thumb}" alt="product">
+                                            </a>
+                                            <!--<div class="button-group">-->
+                                                <!--<a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>-->
+                                                <!--<a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>-->
+                                                <!--<a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>-->
+                                            <!--</div>-->
+                                        </figure>
+                                        <div class="product-caption">
+                                            <p class="product-name">
+                                                <a href="product-details.html">{$list.name}</a>
+                                            </p>
+                                            <div class="price-box">
+                                                <span class="price-regular">{$list.price}</span>
+                                                <span class="price-old"><del>{$list.market_price}</del></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- product grid end -->
+                                </div>
+                                {/foreach}
+                                <!-- product single item start -->
+                            </div>
+                            <!-- product item list wrapper end -->
+
+                            <!-- start pagination area -->
+                            <div class="paginatoin-area text-center">
+                                {php}echo $product_list->render();{/php}
+                            </div>
+                            <!-- end pagination area -->
+                        </div>
+                    </div>
+                    <!-- shop main wrapper end -->
+                </div>
+            </div>
+        </div>
+        <!-- page main wrapper end -->
+    </main>
+    {/block}
+    <!-- main wrapper end -->
+
+    <!-- Start Footer Area Wrapper -->
+
+
+    <!-- Scroll to Top End -->
+
+    <!-- All vendor & plugins & active js include here -->
+    <!--All Vendor Js -->
+    <script src="__STATIC__/assets/js/vendor.js"></script>
+    <!-- Active Js -->
+    <script src="__STATIC__/assets/js/active.js"></script>
+</body>
+
+</html>

@@ -27,5 +27,7 @@ class Home extends Common
         if (!config('web_site_status')) {
             $this->error('站点已经关闭，请稍后访问~');
         }
+        //网站logo
+        $this->assign('web_site_logo',get_file_path(config('web_site_logo')));
     }
 }

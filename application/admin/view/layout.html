@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <block name="page-title"><title>{$page_title|default='后台'} | {:config('web_site_title')} - DolphinPHP</title></block>
+    {block name="page-title"}<title>{$page_title|default='后台'} | {:config('web_site_title')} - DolphinPHP</title>{/block}
 
     <meta name="description" content="{:config('web_site_description')}">
     <meta name="author" content="caiweiming">
@@ -35,40 +35,40 @@
 
     <!-- Stylesheets -->
     <!-- Page JS Plugins CSS -->
-    <notempty name="_css_files">
-        <eq name="Think.config.minify_status" value="1">
+    {notempty name="_css_files"}
+        {eq name="Think.config.minify_status" value="1"}
             <link rel="stylesheet" href="{:minify('group', $_css_files)}">
-        <else/>
-            <volist name="_css_files" id="css">
+        {else/}
+            {volist name="_css_files" id="css"}
             {:load_assets($css)}
-            </volist>
-        </eq>
-    </notempty>
+            {/volist}
+        {/eq}
+    {/notempty}
 
-    <notempty name="_icons">
-        <volist name="_icons" id="icon">
+    {notempty name="_icons"}
+        {volist name="_icons" id="icon"}
         <link rel="stylesheet" href="{$icon.url}">
-        </volist>
-    </notempty>
+        {/volist}
+    {/notempty}
 
-    <block name="plugins-css"></block>
+    {block name="plugins-css"}{/block}
 
     <!-- Bootstrap and OneUI CSS framework -->
-    <eq name="Think.config.minify_status" value="1">
+    {eq name="Think.config.minify_status" value="1"}
     <link rel="stylesheet" id="css-main" href="{:minify('group', 'libs_css,core_css')}">
-    <else/>
+    {else/}
     <link rel="stylesheet" href="__LIBS__/sweetalert/sweetalert.min.css?v={:config('asset_version')}">
     <link rel="stylesheet" href="__LIBS__/magnific-popup/magnific-popup.min.css?v={:config('asset_version')}">
     <link rel="stylesheet" href="__ADMIN_CSS__/bootstrap.min.css?v={:config('asset_version')}">
     <link rel="stylesheet" href="__ADMIN_CSS__/oneui.css?v={:config('asset_version')}">
     <link rel="stylesheet" href="__ADMIN_CSS__/dolphin.css?v={:config('asset_version')}" id="css-main">
     <link rel="stylesheet" href="__LIBS__/viewer/viewer.min.css?v={:config('asset_version')}">
-    </eq>
+    {/eq}
     <link rel="stylesheet" id="css-theme" href="__ADMIN_CSS__/themes/{:config('system_color')}.min.css?v={:config('asset_version')}">
 
     <!--页面css-->
-    <block name="style"></block>
-    <notempty name="_pop">
+    {block name="style"}{/block}
+    {notempty name="_pop"}
     <style>
         #page-container.sidebar-l.sidebar-o {
             padding-left: 0;
@@ -77,7 +77,7 @@
             padding-top: 0;
         }
     </style>
-    </notempty>
+    {/notempty}
     <!-- END Stylesheets -->
 
     <!--插件css钩子-->
@@ -126,8 +126,8 @@
 <!-- Page Container -->
 <div id="page-container" class="sidebar-l sidebar-o side-scroll header-navbar-fixed {empty name="_pop"}{$_COOKIE['sidebarMini'] ?= 'sidebar-mini'}{/empty}">
     <!-- Side Overlay-->
-    <empty name="_pop">
-    <block name="aside">
+    {empty name="_pop"}
+    {block name="aside"}
     <aside id="side-overlay">
         <!-- Side Overlay Scroll Container -->
         <div id="side-overlay-scroll">
@@ -148,13 +148,13 @@
         </div>
         <!-- END Side Overlay Scroll Container -->
     </aside>
-    </block>
-    </empty>
+    {/block}
+    {/empty}
     <!-- END Side Overlay -->
 
     <!-- Sidebar -->
-    <empty name="_pop">
-    <block name="sidebar">
+    {empty name="_pop"}
+    {block name="sidebar"}
     <nav id="sidebar">
         <!-- Sidebar Scroll Container -->
         <div id="sidebar-scroll">
@@ -206,45 +206,45 @@
                         </ul>
                     </div>
                     <a class="h5 text-white" href="{:url('admin/index/index')}">
-                        <notempty name="Think.config.web_site_logo">
+                        {notempty name="Think.config.web_site_logo"}
                         <img src="{$Think.config.web_site_logo|get_file_path}" class="logo" alt="{$Think.config.web_site_title|default='Dolphin PHP'}">
-                        <else/>
+                        {else/}
                         <img src="{$Think.config.public_static_path}admin/img/logo.png" class="logo" alt="Dolphin PHP">
-                        </notempty>
+                        {/notempty}
 
-                        <notempty name="Think.config.web_site_logo_text">
+                        {notempty name="Think.config.web_site_logo_text"}
                         <img src="{$Think.config.web_site_logo_text|get_file_path}" class="logo-text sidebar-mini-hide" alt="{$Think.config.web_site_title|default='Dolphin PHP'}">
-                        <else/>
+                        {else/}
                         <img src="{$Think.config.public_static_path}admin/img/logo-text.png" class="logo-text sidebar-mini-hide" alt="Dolphin PHP">
-                        </notempty>
+                        {/notempty}
                     </a>
                 </div>
                 <!-- END Side Header -->
 
                 <!-- Side Content -->
                 <div class="side-content" id="sidebar-menu">
-                    <notempty name="_sidebar_menus">
+                    {notempty name="_sidebar_menus"}
                     <ul class="nav-main" id="nav-{$_location[0]['id']}">
-                        <volist name="_sidebar_menus" id="menu">
+                        {volist name="_sidebar_menus" id="menu"}
                         <li {$menu['id'] == $_location[1]["id"]?='class="open"'}>
-                            <notempty name="menu.url_value">
-                                <a <if($menu['id'] == $_location[1]["id"])>class="active"</if> href="{$menu.url_value}" target="{$menu.url_target}"><i class="{$menu.icon}"></i><span class="sidebar-mini-hide">{$menu.title}</span></a>
-                            <else/>
+                            {notempty name="menu.url_value"}
+                                <a {if($menu['id'] == $_location[1]["id"])}class="active"{/if} href="{$menu.url_value}" target="{$menu.url_target}"><i class="{$menu.icon}"></i><span class="sidebar-mini-hide">{$menu.title}</span></a>
+                            {else/}
                                 <a class="nav-submenu" data-toggle="nav-submenu" href="javascript:void(0);"><i class="{$menu.icon}"></i><span class="sidebar-mini-hide">{$menu.title}</span></a>
-                                <notempty name="menu['child']">
+                                {notempty name="menu['child']"}
                                 <ul>
-                                    <volist name="menu['child']" id="submenu">
+                                    {volist name="menu['child']" id="submenu"}
                                     <li>
                                         <a {if(isset($_location[2]) && $submenu['id'] == $_location[2]["id"])}class="active"{/if} href="{$submenu.url_value}" target="{$submenu.url_target}"><i class="{$submenu.icon}"></i>{$submenu.title}</a>
                                     </li>
-                                    </volist>
+                                    {/volist}
                                 </ul>
-                                </notempty>
-                            </notempty>
+                                {/notempty}
+                            {/notempty}
                         </li>
-                        </volist>
+                        {/volist}
                     </ul>
-                    </notempty>
+                    {/notempty}
                 </div>
                 <!-- END Side Content -->
             </div>
@@ -252,13 +252,13 @@
         </div>
         <!-- END Sidebar Scroll Container -->
     </nav>
-    </block>
-    </empty>
+    {/block}
+    {/empty}
     <!-- END Sidebar -->
 
     <!-- Header -->
-    <empty name="_pop">
-    <block name="header">
+    {empty name="_pop"}
+    {block name="header"}
     <header id="header-navbar" class="content-mini content-mini-full">
         <!-- Header Navigation Right -->
         <ul class="nav-header pull-right">
@@ -267,9 +267,9 @@
                     <button class="btn btn-default btn-image dropdown-toggle" data-toggle="dropdown" type="button">
                         <img src="{$Think.session.user_auth.uid|get_avatar}" alt="{:session('user_auth.username')}">
                         <span class="caret"></span>
-                        <gt name="_message" value="0">
+                        {gt name="_message" value="0"}
                         <i class="fa fa-circle text-danger notice-circle"></i>
-                        </gt>
+                        {/gt}
                     </button>
                     <ul class="dropdown-menu dropdown-menu-right">
                         <li class="dropdown-header">{:session('user_auth.username')} ({:session('user_auth.role_name')})</li>
@@ -321,17 +321,17 @@
                 <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
                 <a href="javascript:void(0)" title="打开/关闭左侧导航" data-toggle="layout" data-action="sidebar_mini_toggle"><i class="fa fa-bars"></i></a>
             </li>
-            <notempty name="_top_menus">
-            <volist name="_top_menus" id="menu">
+            {notempty name="_top_menus"}
+            {volist name="_top_menus" id="menu"}
             <li class="hidden-xs hidden-sm {$menu['id'] == $_location[0]['id'] ?= 'active'}">
-                <in name="menu.url_type" value="module_admin,module_home">
+                {in name="menu.url_type" value="module_admin,module_home"}
                 <a href="javascript:void(0);" data-module-id="{$menu['id']}" data-module="{$menu['module']}" data-controller="{$menu['controller']}" target="{$menu['url_target']}" class="top-menu"><i class="{$menu.icon}"></i> {$menu.title}</a>
-                <else/>
+                {else/}
                 <a href="{$menu['url_value']}" target="{$menu['url_target']}"><i class="{$menu.icon}"></i> {$menu.title}</a>
-                </in>
+                {/in}
             </li>
-            </volist>
-            </notempty>
+            {/volist}
+            {/notempty}
             <li>
                 <!-- Opens the Apps modal found at the bottom of the page, before including JS code -->
                 <a href="#" data-toggle="modal" data-target="#apps-modal"><i class="si si-grid"></i></a>
@@ -339,27 +339,27 @@
         </ul>
         <!-- END Header Navigation Left -->
     </header>
-    </block>
-    </empty>
+    {/block}
+    {/empty}
     <!-- END Header -->
 
     <!-- Main Container -->
     <main id="main-container">
         <!-- Page Header -->
-        <block name="page-header">
-        <empty name="_pop">
+        {block name="page-header"}
+        {empty name="_pop"}
         <div class="bg-gray-lighter">
             <ol class="breadcrumb">
                 <li><i class="fa fa-map-marker"></i></li>
-                <notempty name="_location">
-                <volist name="_location" id="v">
+                {notempty name="_location"}
+                {volist name="_location" id="v"}
                 <li><a class="link-effect" href="{notempty name='$v["url_value"]'}{:url($v.url_value, $v.params)}{else/}javascript:void(0);{/notempty}">{$v.title}</a></li>
-                </volist>
-                </notempty>
+                {/volist}
+                {/notempty}
             </ol>
         </div>
-        </empty>
-        </block>
+        {/empty}
+        {/block}
         <!-- END Page Header -->
 
         <!-- Page Content -->
@@ -367,14 +367,14 @@
             {// 页面提示钩子}
             {:hook('page_tips')}
             {// 主体内容}
-            <block name="content"></block>
+            {block name="content"}{/block}
         </div>
         <!-- END Page Content -->
     </main>
     <!-- END Main Container -->
 
     <!-- Footer -->
-    <empty name="_pop">
+    {empty name="_pop"}
     <footer id="page-footer" class="content-mini content-mini-full font-s12 bg-gray-lighter clearfix">
         <div class="pull-right">
             Crafted with <i class="fa fa-heart text-city"></i> by <a class="font-w600" href="{:config('dolphin.company_website')}" target="_blank">{:config('dolphin.company_name')}</a>
@@ -383,7 +383,7 @@
             <a class="font-w600" href="{:config('dolphin.product_website')}" target="_blank">{:config('dolphin.product_name')} {:config('dolphin.product_version')}</a> &copy; <span class="js-year-copy"></span>
         </div>
     </footer>
-    </empty>
+    {/empty}
     <!-- END Footer -->
 </div>
 <!-- END Page Container -->
@@ -405,27 +405,27 @@
                 </div>
                 <div class="block-content">
                     <div class="row text-center">
-                        <notempty name="_top_menus_all">
-                        <volist name="_top_menus_all" id="menu">
+                        {notempty name="_top_menus_all"}
+                        {volist name="_top_menus_all" id="menu"}
                         <div class="col-xs-6 col-sm-3">
-                            <in name="menu.url_type" value="module_admin,module_home">
+                            {in name="menu.url_type" value="module_admin,module_home"}
                             <a class="block block-rounded top-menu" href="javascript:void(0);" data-module-id="{$menu['id']}" data-module="{$menu['module']}" data-controller="{$menu['controller']}" target="{$menu['url_target']}">
                                 <div class="block-content text-white {$menu['id'] == $_location[0]['id'] ? 'bg-primary' : 'bg-primary-dark'}">
                                     <i class="{$menu.icon} fa-2x"></i>
                                     <div class="font-w600 push-15-t push-15">{$menu.title}</div>
                                 </div>
                             </a>
-                            <else/>
+                            {else/}
                             <a class="block block-rounded" href="{$menu['url_value']}" target="{$menu['url_target']}">
                                 <div class="block-content text-white {$menu['id'] == $_location[0]['id'] ? 'bg-primary' : 'bg-primary-dark'}">
                                     <i class="{$menu.icon} fa-2x"></i>
                                     <div class="font-w600 push-15-t push-15">{$menu.title}</div>
                                 </div>
                             </a>
-                            </in>
+                            {/in}
                         </div>
-                        </volist>
-                        </notempty>
+                        {/volist}
+                        {/notempty}
                     </div>
                 </div>
             </div>
@@ -435,9 +435,9 @@
 </div>
 <!-- END Apps Modal -->
 <!-- OneUI Core JS: jQuery, Bootstrap, slimScroll, scrollLock, Appear, CountTo, Placeholder, Cookie and App.js -->
-<eq name="Think.config.minify_status" value="1">
+{eq name="Think.config.minify_status" value="1"}
 <script src="{:minify('group', 'core_js,libs_js')}"></script>
-<else/>
+{else/}
 <script src="__ADMIN_JS__/core/jquery.min.js?v={:config('asset_version')}"></script>
 <script src="__ADMIN_JS__/core/bootstrap.min.js?v={:config('asset_version')}"></script>
 <script src="__ADMIN_JS__/core/jquery.slimscroll.min.js?v={:config('asset_version')}"></script>
@@ -456,31 +456,31 @@
 <script src="__LIBS__/sweetalert/sweetalert.min.js?v={:config('asset_version')}"></script>
 <script src="__LIBS__/js-xss/xss.min.js?v={:config('asset_version')}"></script>
 <script src="__LIBS__/viewer/viewer.min.js?v={:config('asset_version')}"></script>
-</eq>
+{/eq}
 
 <!-- Page JS Plugins -->
 <script src="__LIBS__/layer/layer.js?v={:config('asset_version')}"></script>
-<notempty name="_js_files">
-    <eq name="Think.config.minify_status" value="1">
+{notempty name="_js_files"}
+    {eq name="Think.config.minify_status" value="1"}
         <script src="{:minify('group', $_js_files)}"></script>
-    <else/>
-        <volist name="_js_files" id="js">
+    {else/}
+        {volist name="_js_files" id="js"}
         {:load_assets($js, 'js')}
-        </volist>
-    </eq>
-</notempty>
+        {/volist}
+    {/eq}
+{/notempty}
 
 <script>
     jQuery(function () {
         App.initHelpers(['appear', 'slimscroll', 'magnific-popup', 'table-tools']);
-        <notempty name="_js_init">
+        {notempty name="_js_init"}
         App.initHelpers({$_js_init|raw});
-        </notempty>
+        {/notempty}
     });
 </script>
 
 <!--页面js-->
-<block name="script"></block>
+{block name="script"}{/block}
 
 <!--插件js钩子-->
 {:hook('page_plugin_js')}
