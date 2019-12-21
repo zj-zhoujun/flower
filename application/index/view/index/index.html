@@ -249,7 +249,7 @@
                                     $image_list = explode(',',$product['image']);
                                     $image_list[1] = $image_list[1]??$image_list[0];
                                 {/php}
-                                <a href="product-details.html">
+                                <a href="{:url('index/detail',['id'=>$product['id']])}">
                                     <img class="pri-img" src="{$image_list[0]|get_thumb}" alt="product">
                                     <img class="sec-img" src="{$image_list[1]|get_thumb}" alt="product">
                                 </a>

@@ -75,16 +75,37 @@ class Attachment extends Model
      */
     public function getThumbPath($id = '')
     {
-        $result = $this->where('id', $id)->field('path,driver,thumb')->find();
-        if ($result) {
-            if ($result['driver'] == 'local') {
-                return $result['thumb'] != '' ? PUBLIC_PATH.$result['thumb'] : PUBLIC_PATH.$result['path'];
-            } else {
-                return $result['thumb'] != '' ? $result['thumb'] : $result['path'];
-            }
-        } else {
-            return $result;
+        if(!is_array($id)){
+            $id = explode(',',$id);
         }
+        if(count($id)>1){
+            $list = $this->where('id','in',$id)->field('id,path,driver,thumb')->select();
+            if ($list) {
+                $paths = [];
+                foreach($list as $result){
+                    if ($result['driver'] == 'local') {
+                        $paths[$result['id']] = $result['thumb']!='' ? PUBLIC_PATH.$result['thumb'] : PUBLIC_PATH.$result['path'];
+                    } else {
+                        $paths[$result['id']] != '' ? $result['thumb'] : $result['path'];
+                    }
+                }
+                return $paths;
+            } else {
+                return $list;
+            }
+        }else{
+            $result = $this->where('id','in', $id)->field('path,driver,thumb')->find();
+            if ($result) {
+                if ($result['driver'] == 'local') {
+                    return $result['thumb'] != '' ? PUBLIC_PATH.$result['thumb'] : PUBLIC_PATH.$result['path'];
+                } else {
+                    return $result['thumb'] != '' ? $result['thumb'] : $result['path'];
+                }
+            } else {
+                return $result;
+            }
+        }
+
     }
 
     /**

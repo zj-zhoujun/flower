@@ -39,9 +39,14 @@ class Index extends Home
         if(!$info){
             $this->error('参数错误！');
         }
-        $info['image'] = get_files_path($info['image']);
         $info['thumb_image'] = get_thumb($info['image']);
-        dump($info);exit;
+        if(!is_array($info['thumb_image'])){
+            $info['thumb_image'] = explode(',',$info['thumb_image']);
+        }
+        $info['image'] = get_files_path($info['image']);
+        if(!is_array($info['image'])){
+            $info['image'] = explode(',',$info['image']);
+        }
         $this->assign('info',$info);
         return $this->fetch();
     }

@@ -135,6 +135,7 @@ class AdvertType extends Admin
             ->addFormItems([
                 ['hidden', 'id'],
                 ['text', 'name', '分类名称'],
+                ['text', 'flag', '分类标识','','','','disabled'],
                 ['radio', 'status', '立即启用', '', ['否', '是']]
             ])
             ->setFormdata($info)
