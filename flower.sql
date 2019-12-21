@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2019-12-17 18:37:28
+Date: 2019-12-21 09:42:22
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -178,13 +178,27 @@ CREATE TABLE `flower_admin_attachment` (
   `width` int(8) unsigned NOT NULL DEFAULT '0' COMMENT '图片宽度',
   `height` int(8) unsigned NOT NULL DEFAULT '0' COMMENT '图片高度',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='附件表';
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COMMENT='附件表';
 
 -- ----------------------------
 -- Records of flower_admin_attachment
 -- ----------------------------
 INSERT INTO `flower_admin_attachment` VALUES ('1', '1', '109951164526802609.jpg', 'cms', 'uploads/images/20191217/f17c79da82c6a25c598432a402e177e9.jpg', '', '', 'image/jpeg', 'jpg', '404542', 'a75aa9e1b4da79697df8b7684703c75e', 'f152a44d92d5893bd4e5bdff7f0f902c85f557b0', 'local', '0', '1576570968', '1576570968', '100', '1', '658', '909');
 INSERT INTO `flower_admin_attachment` VALUES ('2', '1', '20190930_ef3bab6bd0a524ef7f1f47f74d099174.jpg', 'cms', 'uploads/images/20191217/ad705ccd8c2cf5dd227472ff0b6303ae.jpg', '', '', 'image/jpeg', 'jpg', '11769913', '75edf1dfbb930d5385a1ea41f32c4d4d', '9c825b651b595a6a4c076a2f37fa1bf9909ecd90', 'local', '0', '1576578378', '1576578378', '100', '1', '2796', '1771');
+INSERT INTO `flower_admin_attachment` VALUES ('3', '1', '微信图片_20191218134433.jpg', 'cms', 'uploads/images/20191218/ab5e0f2429cb31fbb306f86e09a1cdef.jpg', '', '', 'image/jpeg', 'jpg', '58909', 'a81d4f08cc94a3d7f5c73ab94f40c5b5', 'c3c8dff05e2d4f9094f28227f28d15398ff3c021', 'local', '0', '1576652046', '1576652046', '100', '1', '800', '800');
+INSERT INTO `flower_admin_attachment` VALUES ('4', '1', 'road-fog-foggy-mist.jpg', 'cms', 'uploads/images/20191219/3411c38ddb82b33631481f80d078a476.jpg', '', '', 'image/jpeg', 'jpg', '112057', '6369d49bac1be05da79efdc372b8aabc', '31af99a771461fc4a1b185aea77844d87f77b72e', 'local', '0', '1576733638', '1576733638', '100', '1', '2250', '1500');
+INSERT INTO `flower_admin_attachment` VALUES ('5', '1', 'pexels-photo-808465.jpeg', 'cms', 'uploads/images/20191219/274dafe176e1487b939f0b1f5d4c385f.jpeg', '', '', 'image/jpeg', 'jpeg', '464730', '9a7896de197fe21ba0981cedd8cbb820', 'a93dafe7c259312b03fe0e22293b0d79708dfa1e', 'local', '0', '1576733798', '1576733798', '100', '1', '2192', '1500');
+INSERT INTO `flower_admin_attachment` VALUES ('6', '1', '7983019-3eabf1d6674448e8.jpg', 'cms', 'uploads/images/20191219/59cd42f9228f1455eb88e02282b4818c.jpg', '', '', 'image/jpeg', 'jpg', '95563', 'd8aac126f35453ef8575d9f09433695b', 'f45ae573f2c77ba4e5207c684ed3fdb1c0627177', 'local', '0', '1576733826', '1576733826', '100', '1', '1080', '1052');
+INSERT INTO `flower_admin_attachment` VALUES ('7', '1', '1442902-2a31f8560606e238.jpg', 'cms', 'uploads/images/20191219/7e6b87a54fc43ddc182673af03999e80.jpg', '', '', 'image/jpeg', 'jpg', '28658', '339b282cb92b330776263bcb314e3aae', '9093058345d9f9bd4cf007549341801474d6b65c', 'local', '0', '1576740876', '1576740876', '100', '1', '700', '417');
+INSERT INTO `flower_admin_attachment` VALUES ('8', '1', '微信图片_20191219193219.jpg', 'cms', 'uploads/images/20191220/968da2ffa963fd5f1ec500f668712c66.jpg', '', '', 'image/jpeg', 'jpg', '145795', 'd5e1ee82f597a3a85b0ce69187748de1', '664541ed2c9055003f0959c468b0a06f20ea8b6e', 'local', '0', '1576803265', '1576803265', '100', '1', '1080', '1440');
+INSERT INTO `flower_admin_attachment` VALUES ('9', '1', '微信图片_20191219193249.jpg', 'cms', 'uploads/images/20191220/fb322e555b98794c2c275f6e08228d6f.jpg', '', '', 'image/jpeg', 'jpg', '88411', '43251e0c3ce59157520976b804072835', '7bb862ef85747455c8a3e6b27b0fcfdcd6d28ac4', 'local', '0', '1576803278', '1576803278', '100', '1', '977', '1088');
+INSERT INTO `flower_admin_attachment` VALUES ('10', '1', 'mmexport1576803382216.jpg', 'cms', 'uploads/images/20191220/2497864644e09842539b217671be690b.jpg', '', '', 'image/jpeg', 'jpg', '64885', '4bd593dcd559e43e448123b63905d6e8', '3d5fef9a7fb146f4fb8d115945087e98a43f639c', 'local', '0', '1576803474', '1576803474', '100', '1', '800', '482');
+INSERT INTO `flower_admin_attachment` VALUES ('11', '1', 'mmexport1576803382225.jpg', 'cms', 'uploads/images/20191220/b0e69d85e265e3c9de809ccd1c522f34.jpg', '', '', 'image/jpeg', 'jpg', '48033', '5a2679b0ada9313a619d037e646bf43a', '872c132d346f0310b318ad22d3b72cdf65380c8e', 'local', '0', '1576803486', '1576803486', '100', '1', '800', '528');
+INSERT INTO `flower_admin_attachment` VALUES ('12', '1', 'mmexport1576803382212.jpg', 'cms', 'uploads/images/20191220/7750976df09938c717e788ff1de10ca5.jpg', '', '', 'image/jpeg', 'jpg', '63573', '3a86b12771228f1e86492991b3b4bf89', '82beca153832cab2bde6f0b3a372768edef12af7', 'local', '0', '1576803545', '1576803545', '100', '1', '800', '542');
+INSERT INTO `flower_admin_attachment` VALUES ('13', '1', '微信图片_20191219193306.jpg', 'cms', 'uploads/images/20191220/6288459d074974f00d30d845a2e851dd.jpg', '', '', 'image/jpeg', 'jpg', '170714', '78a883f82959d4d52727ac14a16c7b68', '97c279fe95d1ab7428e8ff2ffb3d3f63e0b69284', 'local', '0', '1576805141', '1576805141', '100', '1', '1080', '1440');
+INSERT INTO `flower_admin_attachment` VALUES ('14', '1', '微信图片_20191219193316.jpg', 'cms', 'uploads/images/20191220/e7b848934f8cd28abe7d58b6ed3e166a.jpg', '', '', 'image/jpeg', 'jpg', '167311', '147eb623d05cabf17353616683ba96fa', 'dc2509097cb5b485ab0b9f6b7d455642bfe74147', 'local', '0', '1576805148', '1576805148', '100', '1', '1080', '1440');
+INSERT INTO `flower_admin_attachment` VALUES ('15', '1', '微信图片_20191219193209.jpg', 'cms', 'uploads/images/20191220/c829f929b932b14c426017513f6a1068.jpg', '', '', 'image/jpeg', 'jpg', '123257', 'c536adcb57125b0f098fff8c746f826b', 'ad6bc0968564acb33f4cb356a2cc22b67b6f73e7', 'local', '0', '1576805267', '1576805267', '100', '1', '1080', '1412');
+INSERT INTO `flower_admin_attachment` VALUES ('16', '1', '微信图片_20191219193214.jpg', 'cms', 'uploads/images/20191220/09ec23ed23ce4ec81179d8fa9b295288.jpg', '', '', 'image/jpeg', 'jpg', '129270', '1f2c342be489c97fb8d37845a9889b6a', '9bc56b732e50ef344f0194e20f3077ba7fb3522c', 'local', '0', '1576805295', '1576805295', '100', '1', '1080', '1412');
 
 -- ----------------------------
 -- Table structure for flower_admin_config
@@ -214,7 +228,7 @@ CREATE TABLE `flower_admin_config` (
   `sort` int(11) NOT NULL DEFAULT '100' COMMENT '排序',
   `status` tinyint(2) NOT NULL DEFAULT '1' COMMENT '状态：0禁用，1启用',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=40 DEFAULT CHARSET=utf8 COMMENT='系统配置表';
+) ENGINE=MyISAM AUTO_INCREMENT=42 DEFAULT CHARSET=utf8 COMMENT='系统配置表';
 
 -- ----------------------------
 -- Records of flower_admin_config
@@ -222,7 +236,7 @@ CREATE TABLE `flower_admin_config` (
 INSERT INTO `flower_admin_config` VALUES ('1', 'web_site_status', '站点开关', 'base', 'switch', '1', '', '站点关闭后将不能访问，后台可正常登录', '', '', '', '', '', '2', '', '', '', '', '1475240395', '1477403914', '1', '1');
 INSERT INTO `flower_admin_config` VALUES ('2', 'web_site_title', '站点标题', 'base', 'text', '海豚PHP', '', '调用方式：<code>config(\'web_site_title\')</code>', '', '', '', '', '', '2', '', '', '', '', '1475240646', '1477710341', '2', '1');
 INSERT INTO `flower_admin_config` VALUES ('3', 'web_site_slogan', '站点标语', 'base', 'text', '海豚PHP，极简、极速、极致', '', '站点口号，调用方式：<code>config(\'web_site_slogan\')</code>', '', '', '', '', '', '2', '', '', '', '', '1475240994', '1477710357', '3', '1');
-INSERT INTO `flower_admin_config` VALUES ('4', 'web_site_logo', '站点LOGO', 'base', 'image', '', '', '', '', '', '', '', '', '2', '', '', '', '', '1475241067', '1475241067', '4', '1');
+INSERT INTO `flower_admin_config` VALUES ('4', 'web_site_logo', '站点LOGO', 'base', 'image', '1', '', '', '', '', '', '', '', '2', '', '', '', '', '1475241067', '1475241067', '4', '1');
 INSERT INTO `flower_admin_config` VALUES ('5', 'web_site_description', '站点描述', 'base', 'textarea', '', '', '网站描述，有利于搜索引擎抓取相关信息', '', '', '', '', '', '2', '', '', '', '', '1475241186', '1475241186', '6', '1');
 INSERT INTO `flower_admin_config` VALUES ('6', 'web_site_keywords', '站点关键词', 'base', 'text', '海豚PHP、PHP开发框架、后台框架', '', '网站搜索引擎关键字', '', '', '', '', '', '2', '', '', '', '', '1475241328', '1475241328', '7', '1');
 INSERT INTO `flower_admin_config` VALUES ('7', 'web_site_copyright', '版权信息', 'base', 'text', 'Copyright © 2015-2017 DolphinPHP All rights reserved.', '', '调用方式：<code>config(\'web_site_copyright\')</code>', '', '', '', '', '', '2', '', '', '', '', '1475241416', '1477710383', '8', '1');
@@ -257,6 +271,8 @@ INSERT INTO `flower_admin_config` VALUES ('36', 'minify_status', '开启minify',
 INSERT INTO `flower_admin_config` VALUES ('37', 'upload_driver', '上传驱动', 'upload', 'radio', 'local', 'local:本地', '图片或文件上传驱动', '', '', '', '', '', '0', '', '', '', '', '1501488567', '1501490821', '100', '1');
 INSERT INTO `flower_admin_config` VALUES ('38', 'system_log', '系统日志', 'system', 'switch', '1', '', '是否开启系统日志功能', '', '', '', '', '', '0', '', '', '', '', '1512635391', '1512635391', '99', '1');
 INSERT INTO `flower_admin_config` VALUES ('39', 'asset_version', '资源版本号', 'develop', 'text', '20180327', '', '可通过修改版号强制用户更新静态文件', '', '', '', '', '', '0', '', '', '', '', '1522143239', '1522143239', '100', '1');
+INSERT INTO `flower_admin_config` VALUES ('40', 'com_address', '公司地址', 'base', 'text', '罗庄区xxx大街xxx号', '', '', '', '', '', '', '', '2', '', '', '', '', '0', '0', '100', '1');
+INSERT INTO `flower_admin_config` VALUES ('41', 'com_tel', '联系电话', 'base', 'text', '1888888888', '', '', '', '', '', '', '', '2', '', '', '', '', '0', '0', '100', '1');
 
 -- ----------------------------
 -- Table structure for flower_admin_hook
@@ -371,7 +387,7 @@ CREATE TABLE `flower_admin_log` (
   KEY `action_ip_ix` (`action_ip`),
   KEY `action_id_ix` (`action_id`),
   KEY `user_id_ix` (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='行为日志表';
+) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='行为日志表';
 
 -- ----------------------------
 -- Records of flower_admin_log
@@ -380,6 +396,36 @@ INSERT INTO `flower_admin_log` VALUES ('1', '35', '1', '2130706433', 'admin_modu
 INSERT INTO `flower_admin_log` VALUES ('2', '30', '1', '2130706433', 'admin_menu', '335', '超级管理员 添加了节点：所属模块(cms),所属节点ID(257),节点标题(产品分类),节点链接(cms/product_category/index)', '1', '1576547793');
 INSERT INTO `flower_admin_log` VALUES ('3', '87', '1', '2130706433', 'cms_advert', '1', '超级管理员 添加了广告：1', '1', '1576576977');
 INSERT INTO `flower_admin_log` VALUES ('4', '45', '1', '2130706433', 'cms_slider', '1', '超级管理员 添加了滚动图片：1', '1', '1576577930');
+INSERT INTO `flower_admin_log` VALUES ('5', '82', '1', '2130706433', 'cms_advert_type', '1', '超级管理员 添加了广告分类：顶部幻灯片', '1', '1576647173');
+INSERT INTO `flower_admin_log` VALUES ('6', '86', '1', '2130706433', 'cms_advert', '1', '超级管理员 编辑了广告：1', '1', '1576652114');
+INSERT INTO `flower_admin_log` VALUES ('7', '86', '1', '2130706433', 'cms_advert', '1', '超级管理员 编辑了广告：1', '1', '1576652510');
+INSERT INTO `flower_admin_log` VALUES ('8', '86', '1', '2130706433', 'cms_advert', '1', '超级管理员 编辑了广告：1', '1', '1576652570');
+INSERT INTO `flower_admin_log` VALUES ('9', '57', '1', '2130706433', 'cms_model', '1', '超级管理员 添加了内容模型：花语', '1', '1576656269');
+INSERT INTO `flower_admin_log` VALUES ('10', '77', '1', '2130706433', 'cms_column', '1', '超级管理员 添加了栏目：花语', '1', '1576656291');
+INSERT INTO `flower_admin_log` VALUES ('11', '87', '1', '2130706433', 'cms_advert', '2', '超级管理员 添加了广告：幻灯', '1', '1576717976');
+INSERT INTO `flower_admin_log` VALUES ('12', '86', '1', '2130706433', 'cms_advert', '2', '超级管理员 编辑了广告：幻灯', '1', '1576720286');
+INSERT INTO `flower_admin_log` VALUES ('13', '86', '1', '2130706433', 'cms_advert', '1', '超级管理员 编辑了广告：1', '1', '1576720295');
+INSERT INTO `flower_admin_log` VALUES ('14', '42', '1', '2130706433', 'admin_config', '0', '超级管理员 更新了系统设置：分组(base)', '1', '1576720775');
+INSERT INTO `flower_admin_log` VALUES ('15', '42', '1', '2130706433', 'admin_config', '0', '超级管理员 更新了系统设置：分组(base)', '1', '1576726358');
+INSERT INTO `flower_admin_log` VALUES ('16', '42', '1', '2130706433', 'admin_config', '0', '超级管理员 更新了系统设置：分组(base)', '1', '1576726894');
+INSERT INTO `flower_admin_log` VALUES ('17', '42', '1', '2130706433', 'admin_config', '0', '超级管理员 更新了系统设置：分组(base)', '1', '1576726922');
+INSERT INTO `flower_admin_log` VALUES ('18', '42', '1', '2130706433', 'admin_config', '0', '超级管理员 更新了系统设置：分组(base)', '1', '1576732058');
+INSERT INTO `flower_admin_log` VALUES ('19', '86', '1', '2130706433', 'cms_advert', '1', '超级管理员 编辑了广告：1', '1', '1576733180');
+INSERT INTO `flower_admin_log` VALUES ('20', '86', '1', '2130706433', 'cms_advert', '2', '超级管理员 编辑了广告：幻灯', '1', '1576733204');
+INSERT INTO `flower_admin_log` VALUES ('21', '82', '1', '2130706433', 'cms_advert_type', '2', '超级管理员 添加了广告分类：花色迷人', '1', '1576733529');
+INSERT INTO `flower_admin_log` VALUES ('22', '87', '1', '2130706433', 'cms_advert', '3', '超级管理员 添加了广告：花1', '1', '1576733707');
+INSERT INTO `flower_admin_log` VALUES ('23', '87', '1', '2130706433', 'cms_advert', '4', '超级管理员 添加了广告：花2', '1', '1576733810');
+INSERT INTO `flower_admin_log` VALUES ('24', '87', '1', '2130706433', 'cms_advert', '5', '超级管理员 添加了广告：花3', '1', '1576733836');
+INSERT INTO `flower_admin_log` VALUES ('25', '86', '1', '2130706433', 'cms_advert', '3', '超级管理员 编辑了广告：花1', '1', '1576733914');
+INSERT INTO `flower_admin_log` VALUES ('26', '86', '1', '2130706433', 'cms_advert', '2', '超级管理员 编辑了广告：幻灯', '1', '1576803266');
+INSERT INTO `flower_admin_log` VALUES ('27', '86', '1', '2130706433', 'cms_advert', '1', '超级管理员 编辑了广告：1', '1', '1576803279');
+INSERT INTO `flower_admin_log` VALUES ('28', '86', '1', '2130706433', 'cms_advert', '2', '超级管理员 编辑了广告：幻灯', '1', '1576803476');
+INSERT INTO `flower_admin_log` VALUES ('29', '86', '1', '2130706433', 'cms_advert', '1', '超级管理员 编辑了广告：1', '1', '1576803487');
+INSERT INTO `flower_admin_log` VALUES ('30', '87', '1', '2130706433', 'cms_advert', '6', '超级管理员 添加了广告：顶部幻灯片', '1', '1576803547');
+INSERT INTO `flower_admin_log` VALUES ('31', '82', '1', '2130706433', 'cms_advert_type', '3', '超级管理员 添加了广告分类：产品列表下方广告', '1', '1576805238');
+INSERT INTO `flower_admin_log` VALUES ('32', '87', '1', '2130706433', 'cms_advert', '7', '超级管理员 添加了广告：产品下', '1', '1576805270');
+INSERT INTO `flower_admin_log` VALUES ('33', '87', '1', '2130706433', 'cms_advert', '8', '超级管理员 添加了广告：产品下2', '1', '1576805302');
+INSERT INTO `flower_admin_log` VALUES ('34', '42', '1', '2130706433', 'admin_config', '0', '超级管理员 更新了系统设置：分组(base)', '1', '1576805983');
 
 -- ----------------------------
 -- Table structure for flower_admin_menu
@@ -402,7 +448,7 @@ CREATE TABLE `flower_admin_menu` (
   `status` tinyint(2) NOT NULL DEFAULT '1' COMMENT '状态',
   `params` varchar(255) NOT NULL DEFAULT '' COMMENT '参数',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=339 DEFAULT CHARSET=utf8 COMMENT='后台菜单表';
+) ENGINE=MyISAM AUTO_INCREMENT=340 DEFAULT CHARSET=utf8 COMMENT='后台菜单表';
 
 -- ----------------------------
 -- Records of flower_admin_menu
@@ -624,6 +670,7 @@ INSERT INTO `flower_admin_menu` VALUES ('335', '257', 'cms', '产品分类', '',
 INSERT INTO `flower_admin_menu` VALUES ('336', '335', 'cms', '新增', '', 'module_admin', 'cms/product_category/add', '_self', '0', '1576547793', '1576547793', '100', '0', '1', '');
 INSERT INTO `flower_admin_menu` VALUES ('337', '335', 'cms', '编辑', '', 'module_admin', 'cms/product_category/edit', '_self', '0', '1576547793', '1576547793', '100', '0', '1', '');
 INSERT INTO `flower_admin_menu` VALUES ('338', '335', 'cms', '删除', '', 'module_admin', 'cms/product_category/delete', '_self', '0', '1576547793', '1576547793', '100', '0', '1', '');
+INSERT INTO `flower_admin_menu` VALUES ('339', '257', 'cms', '花语', 'fa fa-fw fa-list', 'module_admin', 'cms/content/flower', '_self', '0', '1576656269', '1576656269', '100', '0', '1', '');
 
 -- ----------------------------
 -- Table structure for flower_admin_message
@@ -791,25 +838,33 @@ INSERT INTO `flower_admin_user` VALUES ('1', 'admin', '超级管理员', '$2y$10
 DROP TABLE IF EXISTS `flower_cms_advert`;
 CREATE TABLE `flower_cms_advert` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `typeid` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '分类id',
+  `typeid` varchar(50) NOT NULL DEFAULT '0' COMMENT '分类id',
   `tagname` varchar(30) NOT NULL DEFAULT '' COMMENT '广告位标识',
   `ad_type` tinyint(2) unsigned NOT NULL DEFAULT '0' COMMENT '广告类型',
+  `image` varchar(255) NOT NULL COMMENT '图片',
   `timeset` tinyint(2) unsigned NOT NULL DEFAULT '0' COMMENT '时间限制:0-永不过期,1-在设内时间内有效',
   `start_time` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '开始时间',
   `end_time` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '结束时间',
   `name` varchar(60) NOT NULL DEFAULT '' COMMENT '广告位名称',
-  `content` text NOT NULL COMMENT '广告内容',
+  `content` varchar(255) NOT NULL DEFAULT '' COMMENT '广告内容',
   `expcontent` varchar(0) NOT NULL DEFAULT '' COMMENT '过期显示内容',
   `create_time` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '创建时间',
   `update_time` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '更新时间',
   `status` tinyint(2) unsigned NOT NULL DEFAULT '0' COMMENT '状态',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='广告表';
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='广告表';
 
 -- ----------------------------
 -- Records of flower_cms_advert
 -- ----------------------------
-INSERT INTO `flower_cms_advert` VALUES ('1', '0', 'a', '2', '0', '0', '0', '1', '<a href=\"http://www.baidu.com\" target=\"_blank\"><img src=\"/uploads/images/20191217/f17c79da82c6a25c598432a402e177e9.jpg\" style=\"width:1px;height:1px;\" alt=\"1\" /></a>', '', '1576576977', '1576576977', '1');
+INSERT INTO `flower_cms_advert` VALUES ('1', 'top_slide', 'a', '2', '11', '0', '0', '0', '1', '枝间新绿一重重， 小蕾深藏数点红。', '', '1576576977', '1576803488', '1');
+INSERT INTO `flower_cms_advert` VALUES ('2', 'top_slide', '', '0', '10', '0', '0', '0', '幻灯', '昨日一花开，今日一花开。\r\n\r\n今日花正好，昨日花已老。', '', '1576717976', '1576803476', '1');
+INSERT INTO `flower_cms_advert` VALUES ('3', 'flower_speak', '', '0', '4', '0', '0', '0', '花1', '关于花的一段话', '', '1576733707', '1576733914', '1');
+INSERT INTO `flower_cms_advert` VALUES ('4', 'flower_speak', '', '0', '5', '0', '0', '0', '花2', '关于花的一段话', '', '1576733810', '1576733810', '1');
+INSERT INTO `flower_cms_advert` VALUES ('5', 'flower_speak', '', '0', '6', '0', '0', '0', '花3', '关于花的一段话', '', '1576733837', '1576733837', '1');
+INSERT INTO `flower_cms_advert` VALUES ('6', 'top_slide', '', '0', '12', '0', '0', '0', '顶部幻灯片', '', '', '1576803547', '1576803547', '1');
+INSERT INTO `flower_cms_advert` VALUES ('7', '0', '', '0', '15', '0', '0', '0', '产品下', '', '', '1576805270', '1576805270', '1');
+INSERT INTO `flower_cms_advert` VALUES ('8', 'product_down', '', '0', '16', '0', '0', '0', '产品下2', '', '', '1576805302', '1576805302', '1');
 
 -- ----------------------------
 -- Table structure for flower_cms_advert_type
@@ -818,15 +873,19 @@ DROP TABLE IF EXISTS `flower_cms_advert_type`;
 CREATE TABLE `flower_cms_advert_type` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL DEFAULT '' COMMENT '分类名称',
+  `flag` varchar(255) NOT NULL COMMENT '标识',
   `create_time` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '创建时间',
   `update_time` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '更新时间',
   `status` tinyint(2) unsigned NOT NULL DEFAULT '0' COMMENT '状态',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='广告分类表';
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='广告分类表';
 
 -- ----------------------------
 -- Records of flower_cms_advert_type
 -- ----------------------------
+INSERT INTO `flower_cms_advert_type` VALUES ('1', '顶部幻灯片', 'top_slide', '1576647173', '1576647173', '1');
+INSERT INTO `flower_cms_advert_type` VALUES ('2', '花色迷人', 'flower_speak', '1576733529', '1576733529', '1');
+INSERT INTO `flower_cms_advert_type` VALUES ('3', '产品列表下方广告', 'product_down', '1576805238', '1576805238', '1');
 
 -- ----------------------------
 -- Table structure for flower_cms_column
@@ -853,11 +912,12 @@ CREATE TABLE `flower_cms_column` (
   `rank_auth` int(11) NOT NULL DEFAULT '0' COMMENT '浏览权限，-1待审核，0为开放浏览，大于0则为对应的用户角色id',
   `type` tinyint(2) unsigned NOT NULL DEFAULT '0' COMMENT '栏目属性：0-最终列表栏目，1-外部链接，2-频道封面',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='栏目表';
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='栏目表';
 
 -- ----------------------------
 -- Records of flower_cms_column
 -- ----------------------------
+INSERT INTO `flower_cms_column` VALUES ('1', '0', '花语', '1', '', '_self', '', '', '', '', '', '1', '1576656291', '1576656291', '100', '1', '0', '0', '0');
 
 -- ----------------------------
 -- Table structure for flower_cms_document
@@ -886,6 +946,19 @@ CREATE TABLE `flower_cms_document` (
 
 -- ----------------------------
 -- Records of flower_cms_document
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for flower_cms_document_flower
+-- ----------------------------
+DROP TABLE IF EXISTS `flower_cms_document_flower`;
+CREATE TABLE `flower_cms_document_flower` (
+  `aid` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '文档id',
+  PRIMARY KEY (`aid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='花语模型扩展表';
+
+-- ----------------------------
+-- Records of flower_cms_document_flower
 -- ----------------------------
 
 -- ----------------------------
@@ -1014,11 +1087,12 @@ CREATE TABLE `flower_cms_model` (
   `update_time` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '更新时间',
   `status` tinyint(2) unsigned NOT NULL DEFAULT '0' COMMENT '状态',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='内容模型表';
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='内容模型表';
 
 -- ----------------------------
 -- Records of flower_cms_model
 -- ----------------------------
+INSERT INTO `flower_cms_model` VALUES ('1', 'flower', '花语', 'flower_cms_document_flower', '1', '', '100', '0', '1576656269', '1576656269', '1');
 
 -- ----------------------------
 -- Table structure for flower_cms_nav
@@ -1090,7 +1164,8 @@ CREATE TABLE `flower_cms_product` (
 -- ----------------------------
 -- Records of flower_cms_product
 -- ----------------------------
-INSERT INTO `flower_cms_product` VALUES ('1', '1', '', '2', '0', '100.00', '80.00', '0', '0', '玫瑰1', '<p>因为玫瑰花的传说一般都与爱情相关，所以一直以来玫瑰花被人们称为爱情的象征。而不同的玫瑰花又寄托了送花人不同的爱意，接下来我们就看看那被送到心爱的人手中的玫瑰花都代表什么意思吧，到时可别送错了。</p>\r\n\r\n<p>据说玫瑰原先只长叶子不开花，是由于爱情的力量才使得它开出鲜艳的花朵。</p>\r\n\r\n<p>相传，在古代，山东平阴地方的水山脚下，有一对青年男女，男的叫刘郎，女的叫翠屏。有一天刘郎在东山砍柴，翠屏在西山采药。刘郎有些困乏，便依着柴捆睡着了。</p>\r\n\r\n<p>睡梦中他似乎闻到了一股花香，连忙起来循着花香走到了一个叫&ldquo;水山御苑&rdquo;的地方，这里是王母娘娘的一处凡间花园，而刘郎并不知道。他见到一棵花树，枝头上开了一朵红花，艳丽多姿，芳香扑鼻。仔细一看，原来是一株玫瑰。</p>\r\n\r\n<p><img src=\"https://imgsa.baidu.com/baike/pic/item/d000baa1cd11728b6cb9346dc6fcc3cec2fd2cec.jpg\" style=\"height:501px; width:714px\" /></p>\r\n\r\n<p>水山上的玫瑰都不开花，这里的玫瑰怎么会开出这么美丽又有香味的花朵呢？他想到，如果把这朵鲜花戴在翠屏的头上，该有多好。于是他便伸手将这朵玫瑰花摘了下来，刚想转身离开，突然两个天兵出现在他的面前，不由分说就把刘郎绑了起来。</p>\r\n\r\n<p>翠屏采药归来，不见了刘郎，便一路喊着寻找。她终于找到了双手被天兵绑起来的刘郎，知道他由于私摘了王母娘娘的珍贵玫瑰花，而被罚做终生苦役。天兵说：&ldquo;除非水山上的玫瑰都开出花来，才有可能放刘郎回家。&rdquo;</p>\r\n\r\n<p>从此之后，翠屏每天都要上山取金泉水浇灌玫瑰，她的汗水洒遍了水山的每一块土地。十年后的一个春天的早晨，翠屏突然发现漫山遍野的玫瑰都开出了鲜艳的花朵，刘郎终于回到了翠屏的身边。人们都说，玫瑰花是为刘郎、翠屏这对情人而开的，也是为普天下的有情之人而开的。</p>\r\n\r\n<p><strong>因为玫瑰花的传说一般都与爱情相关，所以一直以来玫瑰花被人们称为爱情的象征。而不同的玫瑰花又寄托了送花人不同的爱意，接下来我们就看看那被送到心爱的人手中的玫瑰花都代表什么意思吧，到时可别送错了。</strong></p>\r\n\r\n<h2>一、不同枝树</h2>\r\n\r\n<p>玫瑰的花色有很多种，每一种颜色都有不同的花语，红玫瑰是最常见的玫瑰品种，一直以来，在我们的印象中红玫瑰花语都是爱情。</p>\r\n\r\n<p><img src=\"https://imgsa.baidu.com/baike/pic/item/2e2eb9389b504fc23f9e084aebdde71191ef6db8.jpg\" style=\"height:470px; width:834px\" /></p>\r\n\r\n<p><strong>但是，这样的理解其实是非常片面的，红玫瑰花语真正的理解应该是：热情、热爱着您，我爱你、热恋，希望与你泛起激情的爱。</strong></p>\r\n\r\n<p>另外，上述中关于红玫瑰花语的理解是从概念上来理解的，而在实际当中，不同枝数的红玫瑰代表着不同的红玫瑰花语，详情如下：<strong>1朵玫瑰：你是我的唯一；2朵玫瑰：世界上只有你和我；3朵玫瑰：I LOVE YOU；365朵玫瑰：天天爱你；999朵玫瑰：无尽的爱；1001朵玫瑰：直到永远。当你要心爱的人表达爱意的时候，可以去参考一下不同枝树的红玫瑰的花语，让这些玫瑰花使你的爱意更好的传达给你的那个他。</strong></p>\r\n\r\n<p>看完了上述中关于红玫瑰花花语是什么和红玫瑰花花语大全你是否有些惊讶呢？红玫瑰花语的理解几乎完全打破了以往的观念。 其实，玫瑰的花语是爱情，红玫瑰花作为最常见的玫瑰花品种，在日常中说玫瑰花其实就是指红玫瑰花，而红玫瑰花语却不能一概而论，所以在以后有人捧着红玫瑰求爱时，可就要仔细一点喽！</p>\r\n\r\n<h2>二、不同花色</h2>\r\n\r\n<p><strong>1、白色</strong></p>\r\n\r\n<p>古代伊朗有关玫瑰的传说犹如迷雾般笼罩着整个东方，由于古伊朗诗人对娇美的玫瑰卷帙浩繁的歌颂，古伊朗成了生长繁衍的乐土。伊朗人对玫瑰花的喜爱和景仰也感染了土耳其人，更确切的说是感染了所有的穆斯林。 波斯（伊朗旧称）的一位诗人说，玫瑰是真主给人间的恩赐。</p>\r\n\r\n<p><img src=\"https://imgsa.baidu.com/baike/pic/item/b8014a90f603738dc286b46dbd1bb051f919ecb5.jpg\" style=\"height:376px; width:554px\" /></p>\r\n\r\n<p>有一次所有的植物都来请求真主任命一个新的主宰来替代睡莲，因为睡莲一到晚间就忘了自己作为主宰的职责。真主应植物的请求，委派了身带自卫武器的白玫瑰为植物的女王。 有些白玫瑰花的外层花瓣还带有粉红色调，这在波斯的传说中也有一则美丽的故事。</p>\r\n\r\n<p>据说夜莺对新上任的女花王一见钟情，忘情的拥抱娇美的女花王，尖刺一下子刺入了它的心脏，殷红的鲜血从它的胸中涌出，染红了玫瑰花瓣，因此白玫瑰的外层花瓣至今仍保留着粉红色调。白玫瑰花语白色玫瑰代表天真、纯洁、无辜、同情、尊敬、神圣、谦卑。</p>\r\n\r\n<p>送女孩子白玫瑰可以是赞赏对方的纯洁，也可以是表达纯洁的爱。白玫瑰形似蔷薇和月季，纯白色大花，高心卷边，花朵形状优美，花梗硬挺，少刺，带着淡淡的芬香。</p>\r\n\r\n<p><strong>2、蓝色</strong></p>\r\n\r\n<p>蓝玫瑰的花语：奇迹与不可能实现的事，也代表永远不可能得到的东西。从前有一个男孩，他住在森林深处。他的房子外面，有一个园子，里面种满各种各样，不同颜色的玫瑰。他把开心的和不开心的事都告诉它们。唯一遗憾的是，这么多的玫瑰之中，却没有长出蓝色的玫瑰，因为蓝玫瑰是这个世界上最珍贵，美丽的。</p>\r\n\r\n<p><img src=\"https://imgsa.baidu.com/baike/pic/item/6d81800a19d8bc3ea003bd858c8ba61ea8d34571.jpg\" style=\"height:398px; width:641px\" /></p>\r\n\r\n<p>他想把这种花送给自己最心爱的女孩。男孩心想，如果能够长出蓝玫瑰，那他就是最幸福的人了。有一天，男孩在森林里看见一个受伤的女孩，于心不忍，就把女孩带回家治伤。然后，女孩爱上了男孩，很爱很爱。男孩也爱上了女孩。他们过着幸福的生活。但是男孩还是有所遗憾，因为他始终没办法送蓝玫瑰给他心爱的女孩，所以有时候，男孩的脸上会出现一种叫忧郁的东西。</p>\r\n\r\n<p>不久，女孩知道了男孩的遗憾。有一天清晨，男孩醒来照例来到他的玫瑰园，他惊喜地发现，玫瑰园里终于长出蓝色的玫瑰了。男孩很开心，终于能够把蓝玫瑰送给他的女孩了。 但是。在一个倾盆大雨的夜晚，男孩的蓝色玫瑰被大雨毁掉了，于是，他选择了离开，因为他无法相信女孩的感情。一切只是伪造的，花如此，感情肯定也是虚伪。</p>\r\n\r\n<p>从此，女孩失去了男孩。女孩每天都在哭，她在玫瑰园里等待她的男孩。很多很多天都过去了，男孩都没有回来。女孩的眼泪都哭干了，她也一天一天都变得&ldquo;枯萎&rdquo;。 而玫瑰园的玫瑰，也枯萎了。 一天，女孩又站在玫瑰园前，望着所有已经枯萎了的玫瑰。突然，她又流泪了，流出蓝色的眼泪，眼泪滴在地上，枯萎的玫瑰开始复活。女孩疯狂地哭，疯狂的流泪。</p>\r\n\r\n<p>终于，玫瑰园重复生机，并且满园都长满蓝色的玫瑰。 后来，在一个大雨之后的一个清晨，男孩终于回来找他的女孩，因为他终于明白，蓝色的玫瑰不是虚伪的爱情，而是因为爱他。所以，他后悔了。 当他回到他们的家园，讶异看到满园的蓝玫瑰，他很开心，但他找遍了所有角落，还是没有找到他的女孩。女孩不见了。</p>\r\n\r\n<p>只有玫瑰园里，有一朵特别美的蓝玫瑰，经常闪烁着露珠，就好像哭过的泪痕。 有蓝玫瑰吗？也许有吧，就像人间的真爱，若有似无。纯的爱和敦厚善良。相知是一种宿命，心灵的交汇让我们有诉不尽的浪漫情怀；相守是一种承诺，人世轮回中，永远铭记我们这段美丽的爱情故事！希望我们每个人都不要像故事中的男孩，失去了才懂得珍惜。</p>\r\n\r\n<p><a href=\"javascript:void(0);\" id=\"vote\"><strong>52</strong></a></p>\r\n', '', '1576576490', '1576578433', '1');
+INSERT INTO `flower_cms_product` VALUES ('1', '1', '', '13,14', '0', '100.00', '80.00', '0', '0', '玫瑰1', '<p>因为玫瑰花的传说一般都与爱情相关，所以一直以来玫瑰花被人们称为爱情的象征。而不同的玫瑰花又寄托了送花人不同的爱意，接下来我们就看看那被送到心爱的人手中的玫瑰花都代表什么意思吧，到时可别送错了。</p>\r\n\r\n<p>据说玫瑰原先只长叶子不开花，是由于爱情的力量才使得它开出鲜艳的花朵。</p>\r\n\r\n<p>相传，在古代，山东平阴地方的水山脚下，有一对青年男女，男的叫刘郎，女的叫翠屏。有一天刘郎在东山砍柴，翠屏在西山采药。刘郎有些困乏，便依着柴捆睡着了。</p>\r\n\r\n<p>睡梦中他似乎闻到了一股花香，连忙起来循着花香走到了一个叫&ldquo;水山御苑&rdquo;的地方，这里是王母娘娘的一处凡间花园，而刘郎并不知道。他见到一棵花树，枝头上开了一朵红花，艳丽多姿，芳香扑鼻。仔细一看，原来是一株玫瑰。</p>\r\n\r\n<p><img src=\"https://imgsa.baidu.com/baike/pic/item/d000baa1cd11728b6cb9346dc6fcc3cec2fd2cec.jpg\" style=\"height:501px; width:714px\" /></p>\r\n\r\n<p>水山上的玫瑰都不开花，这里的玫瑰怎么会开出这么美丽又有香味的花朵呢？他想到，如果把这朵鲜花戴在翠屏的头上，该有多好。于是他便伸手将这朵玫瑰花摘了下来，刚想转身离开，突然两个天兵出现在他的面前，不由分说就把刘郎绑了起来。</p>\r\n\r\n<p>翠屏采药归来，不见了刘郎，便一路喊着寻找。她终于找到了双手被天兵绑起来的刘郎，知道他由于私摘了王母娘娘的珍贵玫瑰花，而被罚做终生苦役。天兵说：&ldquo;除非水山上的玫瑰都开出花来，才有可能放刘郎回家。&rdquo;</p>\r\n\r\n<p>从此之后，翠屏每天都要上山取金泉水浇灌玫瑰，她的汗水洒遍了水山的每一块土地。十年后的一个春天的早晨，翠屏突然发现漫山遍野的玫瑰都开出了鲜艳的花朵，刘郎终于回到了翠屏的身边。人们都说，玫瑰花是为刘郎、翠屏这对情人而开的，也是为普天下的有情之人而开的。</p>\r\n\r\n<p><strong>因为玫瑰花的传说一般都与爱情相关，所以一直以来玫瑰花被人们称为爱情的象征。而不同的玫瑰花又寄托了送花人不同的爱意，接下来我们就看看那被送到心爱的人手中的玫瑰花都代表什么意思吧，到时可别送错了。</strong></p>\r\n\r\n<h2>一、不同枝树</h2>\r\n\r\n<p>玫瑰的花色有很多种，每一种颜色都有不同的花语，红玫瑰是最常见的玫瑰品种，一直以来，在我们的印象中红玫瑰花语都是爱情。</p>\r\n\r\n<p><img src=\"https://imgsa.baidu.com/baike/pic/item/2e2eb9389b504fc23f9e084aebdde71191ef6db8.jpg\" style=\"height:470px; width:834px\" /></p>\r\n\r\n<p><strong>但是，这样的理解其实是非常片面的，红玫瑰花语真正的理解应该是：热情、热爱着您，我爱你、热恋，希望与你泛起激情的爱。</strong></p>\r\n\r\n<p>另外，上述中关于红玫瑰花语的理解是从概念上来理解的，而在实际当中，不同枝数的红玫瑰代表着不同的红玫瑰花语，详情如下：<strong>1朵玫瑰：你是我的唯一；2朵玫瑰：世界上只有你和我；3朵玫瑰：I LOVE YOU；365朵玫瑰：天天爱你；999朵玫瑰：无尽的爱；1001朵玫瑰：直到永远。当你要心爱的人表达爱意的时候，可以去参考一下不同枝树的红玫瑰的花语，让这些玫瑰花使你的爱意更好的传达给你的那个他。</strong></p>\r\n\r\n<p>看完了上述中关于红玫瑰花花语是什么和红玫瑰花花语大全你是否有些惊讶呢？红玫瑰花语的理解几乎完全打破了以往的观念。 其实，玫瑰的花语是爱情，红玫瑰花作为最常见的玫瑰花品种，在日常中说玫瑰花其实就是指红玫瑰花，而红玫瑰花语却不能一概而论，所以在以后有人捧着红玫瑰求爱时，可就要仔细一点喽！</p>\r\n\r\n<h2>二、不同花色</h2>\r\n\r\n<p><strong>1、白色</strong></p>\r\n\r\n<p>古代伊朗有关玫瑰的传说犹如迷雾般笼罩着整个东方，由于古伊朗诗人对娇美的玫瑰卷帙浩繁的歌颂，古伊朗成了生长繁衍的乐土。伊朗人对玫瑰花的喜爱和景仰也感染了土耳其人，更确切的说是感染了所有的穆斯林。 波斯（伊朗旧称）的一位诗人说，玫瑰是真主给人间的恩赐。</p>\r\n\r\n<p><img src=\"https://imgsa.baidu.com/baike/pic/item/b8014a90f603738dc286b46dbd1bb051f919ecb5.jpg\" style=\"height:376px; width:554px\" /></p>\r\n\r\n<p>有一次所有的植物都来请求真主任命一个新的主宰来替代睡莲，因为睡莲一到晚间就忘了自己作为主宰的职责。真主应植物的请求，委派了身带自卫武器的白玫瑰为植物的女王。 有些白玫瑰花的外层花瓣还带有粉红色调，这在波斯的传说中也有一则美丽的故事。</p>\r\n\r\n<p>据说夜莺对新上任的女花王一见钟情，忘情的拥抱娇美的女花王，尖刺一下子刺入了它的心脏，殷红的鲜血从它的胸中涌出，染红了玫瑰花瓣，因此白玫瑰的外层花瓣至今仍保留着粉红色调。白玫瑰花语白色玫瑰代表天真、纯洁、无辜、同情、尊敬、神圣、谦卑。</p>\r\n\r\n<p>送女孩子白玫瑰可以是赞赏对方的纯洁，也可以是表达纯洁的爱。白玫瑰形似蔷薇和月季，纯白色大花，高心卷边，花朵形状优美，花梗硬挺，少刺，带着淡淡的芬香。</p>\r\n\r\n<p><strong>2、蓝色</strong></p>\r\n\r\n<p>蓝玫瑰的花语：奇迹与不可能实现的事，也代表永远不可能得到的东西。从前有一个男孩，他住在森林深处。他的房子外面，有一个园子，里面种满各种各样，不同颜色的玫瑰。他把开心的和不开心的事都告诉它们。唯一遗憾的是，这么多的玫瑰之中，却没有长出蓝色的玫瑰，因为蓝玫瑰是这个世界上最珍贵，美丽的。</p>\r\n\r\n<p><img src=\"https://imgsa.baidu.com/baike/pic/item/6d81800a19d8bc3ea003bd858c8ba61ea8d34571.jpg\" style=\"height:398px; width:641px\" /></p>\r\n\r\n<p>他想把这种花送给自己最心爱的女孩。男孩心想，如果能够长出蓝玫瑰，那他就是最幸福的人了。有一天，男孩在森林里看见一个受伤的女孩，于心不忍，就把女孩带回家治伤。然后，女孩爱上了男孩，很爱很爱。男孩也爱上了女孩。他们过着幸福的生活。但是男孩还是有所遗憾，因为他始终没办法送蓝玫瑰给他心爱的女孩，所以有时候，男孩的脸上会出现一种叫忧郁的东西。</p>\r\n\r\n<p>不久，女孩知道了男孩的遗憾。有一天清晨，男孩醒来照例来到他的玫瑰园，他惊喜地发现，玫瑰园里终于长出蓝色的玫瑰了。男孩很开心，终于能够把蓝玫瑰送给他的女孩了。 但是。在一个倾盆大雨的夜晚，男孩的蓝色玫瑰被大雨毁掉了，于是，他选择了离开，因为他无法相信女孩的感情。一切只是伪造的，花如此，感情肯定也是虚伪。</p>\r\n\r\n<p>从此，女孩失去了男孩。女孩每天都在哭，她在玫瑰园里等待她的男孩。很多很多天都过去了，男孩都没有回来。女孩的眼泪都哭干了，她也一天一天都变得&ldquo;枯萎&rdquo;。 而玫瑰园的玫瑰，也枯萎了。 一天，女孩又站在玫瑰园前，望着所有已经枯萎了的玫瑰。突然，她又流泪了，流出蓝色的眼泪，眼泪滴在地上，枯萎的玫瑰开始复活。女孩疯狂地哭，疯狂的流泪。</p>\r\n\r\n<p>终于，玫瑰园重复生机，并且满园都长满蓝色的玫瑰。 后来，在一个大雨之后的一个清晨，男孩终于回来找他的女孩，因为他终于明白，蓝色的玫瑰不是虚伪的爱情，而是因为爱他。所以，他后悔了。 当他回到他们的家园，讶异看到满园的蓝玫瑰，他很开心，但他找遍了所有角落，还是没有找到他的女孩。女孩不见了。</p>\r\n\r\n<p>只有玫瑰园里，有一朵特别美的蓝玫瑰，经常闪烁着露珠，就好像哭过的泪痕。 有蓝玫瑰吗？也许有吧，就像人间的真爱，若有似无。纯的爱和敦厚善良。相知是一种宿命，心灵的交汇让我们有诉不尽的浪漫情怀；相守是一种承诺，人世轮回中，永远铭记我们这段美丽的爱情故事！希望我们每个人都不要像故事中的男孩，失去了才懂得珍惜。</p>\r\n\r\n<p><a href=\"javascript:void(0);\" id=\"vote\"><strong>52</strong></a></p>\r\n', '', '1576576490', '1576805152', '1');
+INSERT INTO `flower_cms_product` VALUES ('2', '1', '', '8', '0', '100.00', '11.00', '0', '0', '1', '<p>11</p>\r\n', '', '1576821275', '1576821275', '1');
 
 -- ----------------------------
 -- Table structure for flower_cms_product_category
