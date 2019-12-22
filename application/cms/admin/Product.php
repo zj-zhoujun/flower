@@ -103,9 +103,7 @@ class Product extends Admin
                 ['text','price', '本店价'],
                 ['text', 'title', '产品介绍', '<code>必填</code>'],
                 ['ckeditor', 'content', '产品内容', '可作为单页使用'],
-                ['colorpicker', 'color', '文字颜色', '', '', 'rgb'],
-//                ['text', 'size', '文字大小', '只需填写数字，例如:12，表示12px', '',  ['', 'px']],
-                ['text', 'alt', '图片描述', '即图片alt的值'],
+                ['textarea', 'music', '音乐' ],
                 ['radio', 'status', '立即启用', '', ['否', '是'], 1]
             ])
             ->setTrigger('timeset', '1', 'start_time')
@@ -158,6 +156,7 @@ class Product extends Admin
                 ['text','price', '本店价'],
                 ['select', 'typeid', '产品分类', '', $list_type],
                 ['ckeditor', 'content', '产品内容'],
+                ['textarea', 'music', '音乐' ],
                 ['radio', 'status', '立即启用', '', ['否', '是']]
             ])
             ->setTrigger('timeset', '1', 'start_time')

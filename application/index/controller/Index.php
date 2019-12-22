@@ -22,6 +22,10 @@ class Index extends Home
         //幻灯下方广告图
         $product_down = logic('Advert')->getAdvert('product_down');
         $this->assign('product_down',$product_down);
+        //随机查已售产品的音乐
+        $music_arr = Db::name('cms_product')->column('music');
+        $music = $music_arr[array_rand($music_arr)];
+        $this->assign('music',$music);
         return $this->fetch();
     }
 
