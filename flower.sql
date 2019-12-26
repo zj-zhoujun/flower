@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2019-12-22 15:52:00
+Date: 2019-12-26 11:04:37
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -228,21 +228,21 @@ CREATE TABLE `flower_admin_config` (
   `sort` int(11) NOT NULL DEFAULT '100' COMMENT '排序',
   `status` tinyint(2) NOT NULL DEFAULT '1' COMMENT '状态：0禁用，1启用',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=42 DEFAULT CHARSET=utf8 COMMENT='系统配置表';
+) ENGINE=MyISAM AUTO_INCREMENT=48 DEFAULT CHARSET=utf8 COMMENT='系统配置表';
 
 -- ----------------------------
 -- Records of flower_admin_config
 -- ----------------------------
 INSERT INTO `flower_admin_config` VALUES ('1', 'web_site_status', '站点开关', 'base', 'switch', '1', '', '站点关闭后将不能访问，后台可正常登录', '', '', '', '', '', '2', '', '', '', '', '1475240395', '1477403914', '1', '1');
-INSERT INTO `flower_admin_config` VALUES ('2', 'web_site_title', '站点标题', 'base', 'text', '海豚PHP', '', '调用方式：<code>config(\'web_site_title\')</code>', '', '', '', '', '', '2', '', '', '', '', '1475240646', '1477710341', '2', '1');
-INSERT INTO `flower_admin_config` VALUES ('3', 'web_site_slogan', '站点标语', 'base', 'text', '海豚PHP，极简、极速、极致', '', '站点口号，调用方式：<code>config(\'web_site_slogan\')</code>', '', '', '', '', '', '2', '', '', '', '', '1475240994', '1477710357', '3', '1');
+INSERT INTO `flower_admin_config` VALUES ('2', 'web_site_title', '站点标题', 'base', 'text', '老孟花店', '', '调用方式：<code>config(\'web_site_title\')</code>', '', '', '', '', '', '2', '', '', '', '', '1475240646', '1477710341', '2', '1');
+INSERT INTO `flower_admin_config` VALUES ('3', 'web_site_slogan', '站点标语', 'base', 'text', '老孟花店', '', '站点口号，调用方式：<code>config(\'web_site_slogan\')</code>', '', '', '', '', '', '2', '', '', '', '', '1475240994', '1477710357', '3', '1');
 INSERT INTO `flower_admin_config` VALUES ('4', 'web_site_logo', '站点LOGO', 'base', 'image', '1', '', '', '', '', '', '', '', '2', '', '', '', '', '1475241067', '1475241067', '4', '1');
 INSERT INTO `flower_admin_config` VALUES ('5', 'web_site_description', '站点描述', 'base', 'textarea', '', '', '网站描述，有利于搜索引擎抓取相关信息', '', '', '', '', '', '2', '', '', '', '', '1475241186', '1475241186', '6', '1');
-INSERT INTO `flower_admin_config` VALUES ('6', 'web_site_keywords', '站点关键词', 'base', 'text', '海豚PHP、PHP开发框架、后台框架', '', '网站搜索引擎关键字', '', '', '', '', '', '2', '', '', '', '', '1475241328', '1475241328', '7', '1');
+INSERT INTO `flower_admin_config` VALUES ('6', 'web_site_keywords', '站点关键词', 'base', 'text', '老孟花店', '', '网站搜索引擎关键字', '', '', '', '', '', '2', '', '', '', '', '1475241328', '1475241328', '7', '1');
 INSERT INTO `flower_admin_config` VALUES ('7', 'web_site_copyright', '版权信息', 'base', 'text', 'Copyright © 2015-2017 DolphinPHP All rights reserved.', '', '调用方式：<code>config(\'web_site_copyright\')</code>', '', '', '', '', '', '2', '', '', '', '', '1475241416', '1477710383', '8', '1');
 INSERT INTO `flower_admin_config` VALUES ('8', 'web_site_icp', '备案信息', 'base', 'text', '', '', '调用方式：<code>config(\'web_site_icp\')</code>', '', '', '', '', '', '2', '', '', '', '', '1475241441', '1477710441', '9', '1');
 INSERT INTO `flower_admin_config` VALUES ('9', 'web_site_statistics', '站点统计', 'base', 'textarea', '', '', '网站统计代码，支持百度、Google、cnzz等，调用方式：<code>config(\'web_site_statistics\')</code>', '', '', '', '', '', '2', '', '', '', '', '1475241498', '1477710455', '10', '1');
-INSERT INTO `flower_admin_config` VALUES ('10', 'config_group', '配置分组', 'system', 'array', 'base:基本\r\nsystem:系统\r\nupload:上传\r\ndevelop:开发\r\ndatabase:数据库', '', '', '', '', '', '', '', '2', '', '', '', '', '1475241716', '1477649446', '100', '1');
+INSERT INTO `flower_admin_config` VALUES ('10', 'config_group', '配置分组', 'system', 'array', 'base:基本\r\nsystem:系统\r\nupload:上传\r\ndevelop:开发\r\nweixin:微信\r\ndatabase:数据库', '', '', '', '', '', '', '', '2', '', '', '', '', '1475241716', '1477649446', '100', '1');
 INSERT INTO `flower_admin_config` VALUES ('11', 'form_item_type', '配置类型', 'system', 'array', 'text:单行文本\r\ntextarea:多行文本\r\nstatic:静态文本\r\npassword:密码\r\ncheckbox:复选框\r\nradio:单选按钮\r\ndate:日期\r\ndatetime:日期+时间\r\nhidden:隐藏\r\nswitch:开关\r\narray:数组\r\nselect:下拉框\r\nlinkage:普通联动下拉框\r\nlinkages:快速联动下拉框\r\nimage:单张图片\r\nimages:多张图片\r\nfile:单个文件\r\nfiles:多个文件\r\nueditor:UEditor 编辑器\r\nwangeditor:wangEditor 编辑器\r\neditormd:markdown 编辑器\r\nckeditor:ckeditor 编辑器\r\nicon:字体图标\r\ntags:标签\r\nnumber:数字\r\nbmap:百度地图\r\ncolorpicker:取色器\r\njcrop:图片裁剪\r\nmasked:格式文本\r\nrange:范围\r\ntime:时间', '', '', '', '', '', '', '', '2', '', '', '', '', '1475241835', '1495853193', '100', '1');
 INSERT INTO `flower_admin_config` VALUES ('12', 'upload_file_size', '文件上传大小限制', 'upload', 'text', '0', '', '0为不限制大小，单位：kb', '', '', '', '', '', '2', '', '', '', '', '1475241897', '1477663520', '100', '1');
 INSERT INTO `flower_admin_config` VALUES ('13', 'upload_file_ext', '允许上传的文件后缀', 'upload', 'tags', 'doc,docx,xls,xlsx,ppt,pptx,pdf,wps,txt,rar,zip,gz,bz2,7z', '', '多个后缀用逗号隔开，不填写则不限制类型', '', '', '', '', '', '2', '', '', '', '', '1475241975', '1477649489', '100', '1');
@@ -273,6 +273,12 @@ INSERT INTO `flower_admin_config` VALUES ('38', 'system_log', '系统日志', 's
 INSERT INTO `flower_admin_config` VALUES ('39', 'asset_version', '资源版本号', 'develop', 'text', '20180327', '', '可通过修改版号强制用户更新静态文件', '', '', '', '', '', '0', '', '', '', '', '1522143239', '1522143239', '100', '1');
 INSERT INTO `flower_admin_config` VALUES ('40', 'com_address', '公司地址', 'base', 'text', '罗庄区xxx大街xxx号', '', '', '', '', '', '', '', '2', '', '', '', '', '0', '0', '100', '1');
 INSERT INTO `flower_admin_config` VALUES ('41', 'com_tel', '联系电话', 'base', 'text', '1888888888', '', '', '', '', '', '', '', '2', '', '', '', '', '0', '0', '100', '1');
+INSERT INTO `flower_admin_config` VALUES ('42', 'weixin_appid', '应用标识（APPID）', 'weixin', 'text', '12312', '1', '', '', '', '', '', '', '2', '', '', '', '', '0', '0', '100', '1');
+INSERT INTO `flower_admin_config` VALUES ('43', 'weixin_appsecret', '应用密钥', 'weixin', 'text', '1', '1', '', '', '', '', '', '', '2', '', '', '', '', '0', '0', '100', '1');
+INSERT INTO `flower_admin_config` VALUES ('44', 'weixin_state', '验证值', 'weixin', 'text', '1', '1', '', '', '', '', '', '', '2', '', '', '', '', '0', '0', '100', '1');
+INSERT INTO `flower_admin_config` VALUES ('45', 'weixin_token', '令牌（Token）', 'weixin', 'text', '1', '1', '', '', '', '', '', '', '2', '', '', '', '', '0', '0', '100', '1');
+INSERT INTO `flower_admin_config` VALUES ('46', 'weixin_msgurl', '服务器地址', 'weixin', 'text', '1', '1', '', '', '', '', '', '', '2', '', '', '', '', '0', '0', '100', '1');
+INSERT INTO `flower_admin_config` VALUES ('47', 'weixin_gzlj', '引导关注链接', 'weixin', 'text', '1', '1', '', '', '', '', '', '', '2', '', '', '', '', '0', '0', '100', '1');
 
 -- ----------------------------
 -- Table structure for flower_admin_hook
@@ -330,7 +336,7 @@ CREATE TABLE `flower_admin_hook_plugin` (
 -- Records of flower_admin_hook_plugin
 -- ----------------------------
 INSERT INTO `flower_admin_hook_plugin` VALUES ('1', 'admin_index', 'SystemInfo', '1477757503', '1477757503', '1', '1');
-INSERT INTO `flower_admin_hook_plugin` VALUES ('2', 'admin_index', 'DevTeam', '1477755780', '1477755780', '2', '1');
+INSERT INTO `flower_admin_hook_plugin` VALUES ('2', 'admin_index', 'DevTeam', '1477755780', '1477755780', '2', '0');
 
 -- ----------------------------
 -- Table structure for flower_admin_icon
@@ -387,7 +393,7 @@ CREATE TABLE `flower_admin_log` (
   KEY `action_ip_ix` (`action_ip`),
   KEY `action_id_ix` (`action_id`),
   KEY `user_id_ix` (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='行为日志表';
+) ENGINE=MyISAM AUTO_INCREMENT=37 DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='行为日志表';
 
 -- ----------------------------
 -- Records of flower_admin_log
@@ -426,6 +432,8 @@ INSERT INTO `flower_admin_log` VALUES ('31', '82', '1', '2130706433', 'cms_adver
 INSERT INTO `flower_admin_log` VALUES ('32', '87', '1', '2130706433', 'cms_advert', '7', '超级管理员 添加了广告：产品下', '1', '1576805270');
 INSERT INTO `flower_admin_log` VALUES ('33', '87', '1', '2130706433', 'cms_advert', '8', '超级管理员 添加了广告：产品下2', '1', '1576805302');
 INSERT INTO `flower_admin_log` VALUES ('34', '42', '1', '2130706433', 'admin_config', '0', '超级管理员 更新了系统设置：分组(base)', '1', '1576805983');
+INSERT INTO `flower_admin_log` VALUES ('35', '42', '1', '2130706433', 'admin_config', '0', '超级管理员 更新了系统设置：分组(base)', '1', '1577151780');
+INSERT INTO `flower_admin_log` VALUES ('36', '42', '1', '2130706433', 'admin_config', '0', '超级管理员 更新了系统设置：分组(weixin)', '1', '1577155737');
 
 -- ----------------------------
 -- Table structure for flower_admin_menu
@@ -773,7 +781,7 @@ CREATE TABLE `flower_admin_plugin` (
 -- Records of flower_admin_plugin
 -- ----------------------------
 INSERT INTO `flower_admin_plugin` VALUES ('1', 'SystemInfo', '系统环境信息', 'fa fa-fw fa-info-circle', '在后台首页显示服务器信息', '蔡伟明', 'http://www.caiweiming.com', '{\"display\":\"1\",\"width\":\"6\"}', '1.0.0', 'system_info.ming.plugin', '0', '1477757503', '1477757503', '100', '1');
-INSERT INTO `flower_admin_plugin` VALUES ('2', 'DevTeam', '开发团队成员信息', 'fa fa-fw fa-users', '开发团队成员信息', '蔡伟明', 'http://www.caiweiming.com', '{\"display\":\"1\",\"width\":\"6\"}', '1.0.0', 'dev_team.ming.plugin', '0', '1477755780', '1477755780', '100', '1');
+INSERT INTO `flower_admin_plugin` VALUES ('2', 'DevTeam', '开发团队成员信息', 'fa fa-fw fa-users', '开发团队成员信息', '蔡伟明', 'http://www.caiweiming.com', '{\"display\":\"1\",\"width\":\"6\"}', '1.0.0', 'dev_team.ming.plugin', '0', '1477755780', '1477755780', '100', '0');
 
 -- ----------------------------
 -- Table structure for flower_admin_role
@@ -830,7 +838,7 @@ CREATE TABLE `flower_admin_user` (
 -- ----------------------------
 -- Records of flower_admin_user
 -- ----------------------------
-INSERT INTO `flower_admin_user` VALUES ('1', 'admin', '超级管理员', '$2y$10$Brw6wmuSLIIx3Yabid8/Wu5l8VQ9M/H/CG3C9RqN9dUCwZW3ljGOK', '', '0', '', '0', '0', '0.00', '0', '1', '0', '0', '1476065410', '1576550130', '1576550130', '2130706433', '100', '1');
+INSERT INTO `flower_admin_user` VALUES ('1', 'admin', '超级管理员', '$2y$10$Brw6wmuSLIIx3Yabid8/Wu5l8VQ9M/H/CG3C9RqN9dUCwZW3ljGOK', '', '0', '', '0', '0', '0.00', '0', '1', '0', '0', '1476065410', '1577155724', '1577155724', '2130706433', '100', '1');
 
 -- ----------------------------
 -- Table structure for flower_cms_advert
@@ -1232,4 +1240,125 @@ CREATE TABLE `flower_cms_support` (
 
 -- ----------------------------
 -- Records of flower_cms_support
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for flower_wechat_diy_menu
+-- ----------------------------
+DROP TABLE IF EXISTS `flower_wechat_diy_menu`;
+CREATE TABLE `flower_wechat_diy_menu` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `is_show` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否显示',
+  `sort` tinyint(3) NOT NULL DEFAULT '0' COMMENT '排序',
+  `wxappid` varchar(30) NOT NULL DEFAULT '' COMMENT '微信appid',
+  `pid` int(11) NOT NULL DEFAULT '0' COMMENT '父级ID',
+  `title` varchar(30) NOT NULL DEFAULT '' COMMENT '标题',
+  `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '菜单类型 0跳转网址|1跳转小程序|2回复关键字',
+  `keyword` varchar(30) NOT NULL DEFAULT '' COMMENT '回复关键字',
+  `url` varchar(120) NOT NULL DEFAULT '' COMMENT '跳转url',
+  `weapp_appid` varchar(30) NOT NULL DEFAULT '' COMMENT '小程序Appid',
+  `weapp_page` varchar(50) NOT NULL DEFAULT '' COMMENT '小程序页面',
+  `w_time` int(10) unsigned DEFAULT '0' COMMENT '新增时间',
+  `url_module` varchar(50) NOT NULL DEFAULT '' COMMENT '???',
+  `url_classify` varchar(20) NOT NULL DEFAULT '' COMMENT '???',
+  `url_object` varchar(50) NOT NULL DEFAULT '' COMMENT '???',
+  `s_uid` int(10) NOT NULL DEFAULT '0' COMMENT '供货商id ???',
+  `token` varchar(60) NOT NULL DEFAULT '' COMMENT '微信token',
+  `u_time` int(10) unsigned DEFAULT '0' COMMENT '更新时间',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='Diy菜单设置';
+
+-- ----------------------------
+-- Records of flower_wechat_diy_menu
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for flower_wechat_msg_log
+-- ----------------------------
+DROP TABLE IF EXISTS `flower_wechat_msg_log`;
+CREATE TABLE `flower_wechat_msg_log` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `result` varchar(1000) NOT NULL DEFAULT '' COMMENT '错误',
+  `data` text COMMENT '数据',
+  `token` varchar(255) NOT NULL DEFAULT '' COMMENT 'token',
+  `signature` varchar(255) NOT NULL DEFAULT '' COMMENT '签名',
+  `timestamp` int(11) NOT NULL DEFAULT '0' COMMENT '时间戳',
+  `nonce` varchar(255) NOT NULL DEFAULT '' COMMENT '随机字符串',
+  `w_time` int(11) NOT NULL DEFAULT '0' COMMENT '时间戳',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='微信消息日志';
+
+-- ----------------------------
+-- Records of flower_wechat_msg_log
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for flower_wechat_reply_keyword
+-- ----------------------------
+DROP TABLE IF EXISTS `flower_wechat_reply_keyword`;
+CREATE TABLE `flower_wechat_reply_keyword` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `type` varchar(15) NOT NULL DEFAULT '' COMMENT '消息类型 text文本/image图文',
+  `keyword` char(255) NOT NULL DEFAULT '' COMMENT '关键词',
+  `ext_id` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '关键词扩展表id',
+  `wc_appid` varchar(60) NOT NULL DEFAULT '' COMMENT '微信appid',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='微信关键词';
+
+-- ----------------------------
+-- Records of flower_wechat_reply_keyword
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for flower_wechat_reply_keyword_image
+-- ----------------------------
+DROP TABLE IF EXISTS `flower_wechat_reply_keyword_image`;
+CREATE TABLE `flower_wechat_reply_keyword_image` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `keyword` varchar(255) DEFAULT '' COMMENT '关键词',
+  `class` tinyint(3) DEFAULT '0' COMMENT '关键词类型',
+  `title` varchar(255) DEFAULT '' COMMENT '标题',
+  `info` mediumtext COMMENT '简介',
+  `image` varchar(255) DEFAULT '' COMMENT '封面图片',
+  `is_show` tinyint(3) DEFAULT '0' COMMENT '是否显示封面',
+  `content` mediumtext COMMENT '详情',
+  `url` varchar(255) DEFAULT '' COMMENT '链接',
+  `num` int(11) unsigned DEFAULT '0' COMMENT '匹配次数',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='微商图文回复';
+
+-- ----------------------------
+-- Records of flower_wechat_reply_keyword_image
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for flower_wechat_reply_keyword_text
+-- ----------------------------
+DROP TABLE IF EXISTS `flower_wechat_reply_keyword_text`;
+CREATE TABLE `flower_wechat_reply_keyword_text` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) DEFAULT '' COMMENT '关键词',
+  `class` tinyint(3) DEFAULT '0' COMMENT '关键词类型',
+  `info` mediumtext COMMENT '回复内容',
+  `num` int(11) DEFAULT '0' COMMENT '匹配次数',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='微商文本回复';
+
+-- ----------------------------
+-- Records of flower_wechat_reply_keyword_text
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for flower_wechat_reply_subscribe
+-- ----------------------------
+DROP TABLE IF EXISTS `flower_wechat_reply_subscribe`;
+CREATE TABLE `flower_wechat_reply_subscribe` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT '' COMMENT '自段名称',
+  `text` mediumtext COMMENT '字段值',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统回复内容表';
+
+-- ----------------------------
+-- Records of flower_wechat_reply_subscribe
 -- ----------------------------

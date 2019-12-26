@@ -2933,6 +2933,7 @@ only screen and (max-width: 767.98px) {
 
 .product-thumb img {
     width: 100%;
+    max-height: 300px;
 }
 
 .product-thumb .sec-img {
@@ -4311,6 +4312,7 @@ only screen and (max-width: 767.98px) {
 .pro-large-img img {
     width: 100%;
     border: 1px solid #dfdede;
+    max-height: 300px;
 }
 
 .pro-nav-thumb {

@@ -9,6 +9,8 @@ class Index extends Home
 {
     public function index()
     {
+        $rs = logic('Juhe')->Toh();
+        dump($rs);exit;
         //顶部幻灯
         $slide_list = logic('Advert')->getAdvert('top_slide');
         $this->assign('slide_list',$slide_list);
@@ -32,7 +34,7 @@ class Index extends Home
     public function shop(){
         //产品列表
         $page = input('page')?:1;
-        $product_list = logic('Product')->Lists('',1,$page);
+        $product_list = logic('Product')->Lists('',5,$page);
         $this->assign('product_list',$product_list);
         return $this->fetch();
     }

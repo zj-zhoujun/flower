@@ -1492,3 +1492,130 @@ if (!function_exists('dp_send_message')) {
         return false !== $MessageModel->saveAll($list);
     }
 }
+/**
+ * 发起HTTPS请求
+ */
+function curl_post($url, $data, $header = '', $timeOut = 0)
+{
+    //初始化curl
+    $ch = curl_init();
+    //参数设置
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+    curl_setopt($ch, CURLOPT_TIMEOUT, $timeOut);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, is_array($data)?http_build_query($data):$data);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    if($header != '') {
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+    }
+    $result = curl_exec($ch);
+    //连接失败
+    if($result == FALSE) {
+        //\think\Log::record('[ CURL ] ERROR ' . curl_error($ch)."\n".var_export(debug_backtrace(), true)."\n", 'error');
+    }
+    curl_close($ch);
+    return $result;
+}
+
+/**
+ * 发起HTTP GET请求
+ */
+function curl_get($url)
+{
+    $oCurl = curl_init();
+    if(stripos($url, "https://") !== FALSE) {
+        curl_setopt($oCurl, CURLOPT_SSL_VERIFYPEER, FALSE);
+        curl_setopt($oCurl, CURLOPT_SSL_VERIFYHOST, FALSE);
+        curl_setopt($oCurl, CURLOPT_SSLVERSION, 1); //CURL_SSLVERSION_TLSv1
+    }
+    curl_setopt($oCurl, CURLOPT_TIMEOUT, 3);
+    curl_setopt($oCurl, CURLOPT_URL, $url);
+    curl_setopt($oCurl, CURLOPT_RETURNTRANSFER, 1);
+    $sContent = curl_exec($oCurl);
+    $aStatus = curl_getinfo($oCurl);
+    $error = curl_error($oCurl);
+    curl_close($oCurl);
+    if($error) {
+        $sContent = file_get_contents($url);
+        return $sContent;
+    }
+
+    if(intval($aStatus["http_code"]) == 200) {
+        return $sContent;
+    } else {
+        return false;
+    }
+}
+
+/**
+ * 发起HTTP请求
+ */
+function curl_request($url = '', $params = [], $headers = [], $method = '')
+{
+    //初始化
+    $ch = curl_init();
+
+    //设置
+    curl_setopt($ch, CURLOPT_URL, $url); //请求地址
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5); //等待时间
+    curl_setopt($ch, CURLOPT_TIMEOUT, 5);  //超时时间
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //失败返回FALSE，成功返回结果而不是TRUE
+    curl_setopt($ch, CURLOPT_HEADER, 0); //不要头信息
+
+    //method
+    if($method) {
+        switch(strtolower($method)) {
+            case 'post':
+                curl_setopt($ch, CURLOPT_POST, true);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, is_array($params) ? http_build_query($params) : $params);
+                break;
+            case 'put':
+            case 'delete':
+                curl_setopt($ch, CURLOPT_CUSTOMREQUEST, strtoupper($method));
+                break;
+            case 'get':
+            default:
+                curl_setopt($ch, CURLOPT_HTTPGET, true);
+        }
+    }
+    //params
+    if($params) {
+        curl_setopt($ch, CURLOPT_POSTFIELDS, is_array($params) ? http_build_query($params) : $params);
+    }
+    //header
+    array_push($headers, 'Accept:application/json');
+    array_push($headers, 'Accept-Charset:utf-8');
+    $header_arr = [];
+    foreach($headers as $key => $value) {
+        array_push($header_arr, $key.":".$value);
+    }
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $header_arr);
+    //ssl
+    if(substr($url, 0, 8) == 'https://') {
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+    }
+    //agent
+    curl_setopt($ch, CURLOPT_USERAGENT, 'SSTS Browser/1.0');
+    curl_setopt($ch, CURLOPT_ENCODING, 'gzip');
+    curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/4.0)'); // 模拟用户使用的浏览器
+
+    //请求
+    $result = curl_exec($ch);
+    $error = curl_error($ch);
+    $info = curl_getinfo($ch);
+
+    //关闭
+    curl_close($ch);
+
+    if(false !== $result && !$error && isset($info['http_code']) && (200 == $info['http_code'])) {
+        //请求成功
+        return ['err' => '', 'data' => $result];
+    } else {
+        //请求失败
+        return ['err' => $error ?: $result];
+    }
+}
