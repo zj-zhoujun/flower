@@ -9,8 +9,8 @@ class Index extends Home
 {
     public function index()
     {
-        $rs = logic('Juhe')->Toh();
-        dump($rs);exit;
+        //$rs = logic('Juhe')->Toh();
+        //dump($rs);exit;
         //顶部幻灯
         $slide_list = logic('Advert')->getAdvert('top_slide');
         $this->assign('slide_list',$slide_list);
